@@ -13,10 +13,10 @@ procedure Main is
 
 begin
 
-Adx.App.Run.Main;
+--Adx.App.Run.Main;
 
 -- Testtin Commit
---put_line(To_String(Adx.Lib.Sysout.Sysout("ls")));
+put_line(To_String(Adx.Lib.Sysout.Sysout("ls")));
 
 
 --Loophole.Run;
