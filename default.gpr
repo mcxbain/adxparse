@@ -6,7 +6,7 @@ project Default is
    for Exec_Dir use "bin/";
 
    package Compiler is
-      for Switches ("Ada") use ("-fstack-check", "-O2", "-E");
+      for Switches ("Ada") use ("-fstack-check", "-O2");
    end Compiler;
 
    package Ide is
