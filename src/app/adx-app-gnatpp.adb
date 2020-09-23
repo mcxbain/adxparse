@@ -44,7 +44,7 @@ package body Adx.App.Gnatpp is
    WriteAdxlibDicFile;
    
    Put_Line ("X16 Format");
-   Result := Adx.Lib.Sysout.Sysout ("gnatpp -D adxlib.dic --use-on-new-line --RM-style-spacing -A1 -c1 -aM -nM -i3 -M256 -rnb -v -P " & Project_File);
+   Result := Adx.Lib.Sysout.Sysout ("gnatpp -D adxlib.dic --comments-unchanged --use-on-new-line --RM-style-spacing -A1 -c1 -aM -nM -i3 -M256 -rnb -P " & Project_File);
    --Put_Line (To_String (Result));
    
    end X16Format;
