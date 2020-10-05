@@ -20,16 +20,18 @@ package body Adx.Lib.Sysout is
 ------------------------------------------------------------------------------
 -- Exceptions
 ------------------------------------------------------------------------------
-Default_Error : exception;
+Open_Error:exception;
+Close_Error:exception;
+Buffer_Error:exception;
 
 ------------------------------------------------------------------------------
--- popen Imported C function
+-- Popen Imported C function
 ------------------------------------------------------------------------------
 function Popen(Command:Interfaces.C.char_array; Mode:Interfaces.C.char_array) return Interfaces.C_Streams.FILEs;
 pragma Import(C, Popen);
 
 ------------------------------------------------------------------------------
--- pclose Imported C function
+-- Pclose Imported C function
 ------------------------------------------------------------------------------
 function Pclose(Filestream:Interfaces.C_Streams.FILEs) return Interfaces.C_Streams.int;
 pragma Import(C, Pclose);
@@ -44,8 +46,12 @@ function Sysout(Command:String) return Unbounded_String is
    Char_Value:Character;
    Eof_Found:Boolean:=False;
    Close_Status:Interfaces.C_Streams.int;
-   
-   Buffer_Size:constant Integer:=1000000;
+
+   Buffer_Size:constant Integer:=1_048_576;
+   -- https://unix.stackexchange.com/questions/11946/how-big-is-the-pipe-buffer 
+   -- cat /proc/sys/fs/pipe-max-size 
+   -- Pipe Max Size 1048576 Bytes. The char type takes 1 Byte of memory
+
    Buffer_Content:Unbounded_String;
 
 begin
@@ -53,12 +59,11 @@ begin
    File_Stream:=Popen(Interfaces.C.To_C(Command), Interfaces.C.To_C("r"));
 
    if (File_Stream = System.Null_Address) then
-   
-      Raise Default_Error With "Failed to open Popen Process";
-      
+
+      raise Open_Error with "Failed to open Popen Process";
+
    else
-   
-   
+
       -- run for loop with max buffer size
       for I in Integer range 1 .. Buffer_Size loop
 
@@ -74,19 +79,17 @@ begin
 
       end loop;
 
-
       -- check if the Buffer exeeds the result_size
       if not Eof_Found then
-         Raise Default_Error With "No EOF Found Buffer Size too small";
+         raise Buffer_Error with "No EOF Found Buffer Size" & Integer'Image(Buffer_Size) & " too small";
       end if;
 
       -- check if popen process can be closed
       Close_Status:=Pclose(File_Stream);
-      
+
       if (Close_Status /= 0) then
-         Raise Default_Error With "Failed to close Popen Process";
+         raise Close_Error with "Failed to close Popen Process";
       end if;
-      
 
    end if;
 

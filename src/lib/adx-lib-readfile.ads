@@ -7,8 +7,8 @@
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Adx.Lib.Stringtype;
-use Adx.Lib.Stringtype;
+with Adx.Lib.Vectortype;
+use Adx.Lib.Vectortype;
 
 package Adx.Lib.Readfile is
 

@@ -8,11 +8,9 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
-With Ada.IO_Exceptions;
-with Adx.Lib.Stringtype;
+with Ada.IO_Exceptions;
 
 use Ada.Text_IO;
-use Adx.Lib.Stringtype;
 
 package body Adx.Lib.Writefile is
 
@@ -26,10 +24,11 @@ procedure Writefile(File_Name:String; My_Vector:String_Vector_Type) is
 begin
 
    begin
-   Ada.Text_IO.Open(File => My_File, Name => File_Name, Mode => Out_File);
+      Ada.Text_IO.Open(File => My_File, Name => File_Name, Mode => Out_File);
    exception
-   when Ada.IO_Exceptions.Name_Error => put_line("File dose not exists Creating File");
-     Ada.Text_IO.Create(My_File, Mode => Out_File, Name => File_Name);
+      when Ada.IO_Exceptions.Name_Error =>
+         Put_Line("File dose not exists Creating File");
+         Ada.Text_IO.Create(My_File, Mode => Out_File, Name => File_Name);
    end;
 
    for I in My_Vector.First_Index .. My_Vector.Last_Index loop
