@@ -1,3 +1,12 @@
+------------------------------------------------------------------------------
+--                                                                          --
+--                         ADX.APP.CUSTOM.TRANSFORM                         --
+--                                                                          --
+--                                  A D A                                   --
+--                                                                          --
+--                                 S p e c                                  --
+--                                                                          --
+------------------------------------------------------------------------------
 package Adx.App.Custom.Transform is
 
 function TransformLineSpace(My_String:String) return String;
