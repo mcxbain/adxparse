@@ -14,8 +14,11 @@ Use Adx.Lib.Vectortype;
 procedure Main is
 
 
-   Dictionary_String:String_Vector_Type:= Adx.App.Format.Dictionary.GetAdxLib;
-   Project_Dir:String:="/home/mcxbain/git/adxlib/src/";
+   --Dictionary_String:String_Vector_Type:= Adx.App.Format.Dictionary.GetAdxLib;
+   --Project_Dir:String:="/home/mcxbain/git/adxlib/src/";
+
+    Dictionary_String:String_Vector_Type:= Adx.App.Format.Dictionary.GetAdxTools;
+    Project_Dir:String:="/home/mcxbain/git/adxtools/src/";
 
 begin
 

@@ -42,5 +42,23 @@ package body Adx.app.format.dictionary is
 
    end GetAdxLib;
    
+   
+   ---------------
+   -- GetAdxTools --
+   ---------------
+
+   function GetAdxTools return String_Vector_Type is
+
+      My_Vector : String_Vector_Type;
+
+   begin
+
+      My_Vector.Append("*CR*");
+      My_Vector.Append("*LF*");
+
+      return My_Vector;
+
+   end GetAdxTools;
+   
 
 end Adx.app.format.dictionary;
