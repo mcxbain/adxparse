@@ -1,17 +1,7 @@
 # adxformat
 
 ```bash
-##### Structure
-
--------------------------------------
-Adx.Code.Format.Header
-Adx.Code.Format.Gnatpp
-Adx.Code.Format.Custom
-Adx.Code.Analyse.Gnatmetric
-Adx.Code.Analyse.Unitlist
--------------------------------------
-
-##### Units
+##### Unit Structure
 -------------------------------------
 Adx.Code.Format.Header.Add
 Adx.Code.Format.Header.Add.Make
