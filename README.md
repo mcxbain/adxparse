@@ -23,10 +23,10 @@ Adx.Code.Format.Header.Remove.Make
 Adx.Code.Format.Header.Remove.Parse
 Adx.Code.Format.Header.Remove.Transform
 
-Adx.Code.Format.Gnatpp
-Adx.Code.Format.Gnatpp.Make
-Adx.Code.Format.Gnatpp.Parse
-Adx.Code.Format.Gnatpp.Transform
+Adx.Code.Format.Default
+Adx.Code.Format.Default.Make
+Adx.Code.Format.Default.Parse
+Adx.Code.Format.Default.Transform
 
 Adx.Code.Format.Custom
 Adx.Code.Format.Custom.Make
