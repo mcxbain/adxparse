@@ -33,8 +33,8 @@ Adx.Code.Format.Custom.Make
 Adx.Code.Format.Custom.Parse
 Adx.Code.Format.Custom.Transform
 
-Adx.Code.Analyse.Gnatmetric
-Adx.Code.Analyse.Gnatmetric.Make
+Adx.Code.Analyse.Metric
+Adx.Code.Analyse.Metric.Make
 
 Adx.Code.Analyse.Unitlist
 Adx.Code.Analyse.Unitlist.Make
