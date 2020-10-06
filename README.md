@@ -23,9 +23,6 @@ Adx.Code.Format.Custom.Make
 Adx.Code.Format.Custom.Parse
 Adx.Code.Format.Custom.Transform
 
-Adx.Code.Format.Package
-Adx.Code.Format.Package.Rename
-
 Adx.Code.Analyse.Metric
 Adx.Code.Analyse.Metric.Make
 
@@ -34,4 +31,7 @@ Adx.Code.Analyse.Unitlist.Make
 
 Adx.Code.Generate.Package
 Adx.Code.Generate.Package.Create
+
+Adx.Code.Refactor.Package
+Adx.Code.Refactor.Package.Rename
 ```
