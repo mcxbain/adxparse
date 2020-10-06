@@ -28,4 +28,8 @@ Adx.Code.Analyse.Metric.Make
 
 Adx.Code.Analyse.Unitlist
 Adx.Code.Analyse.Unitlist.Make
+
+Adx.Code.Generate.Package
+Adx.Code.Generate.Package.Create
+Adx.Code.Generate.Package.Rename
 ```
