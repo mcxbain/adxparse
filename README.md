@@ -30,8 +30,8 @@ Adx.Code.Analyse.Unitlist
 Adx.Code.Analyse.Unitlist.Make
 
 Adx.Code.Generate.Package
-Adx.Code.Generate.Package.Create
+Adx.Code.Generate.Package.Make
 
-Adx.Code.Refactor.Package
-Adx.Code.Refactor.Package.Rename
+Adx.Code.Rename.Package
+Adx.Code.Rename.Package.Make
 ```
