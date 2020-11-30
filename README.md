@@ -1,7 +1,7 @@
 # adxformat
 
 
-##### Unit Structure 1
+##### Unit Structure
 ```bash
 Adx.Code.Format.Header.Add
 Adx.Code.Format.Header.Add.Make
@@ -34,66 +34,4 @@ Adx.Code.Generate.Package.Create
 
 Adx.Code.Refactor.Package
 Adx.Code.Refactor.Package.Rename
-```
-
-##### Unit Structure 2
-```bash
-Adx.Code_Format.Add_Header
-Adx.Code_Format.Add_Header_Make
-Adx.Code_Format.Add_Header_Parse
-Adx.Code_Format.Add_Header_Transform
-
-Adx.Code_Format.Remove_Header
-Adx.Code_Format.Remove_Header_Make
-Adx.Code_Format.Remove_Header_Parse
-Adx.Code_Format.Remove_Header_Transform
-
-Adx.Code_Format.Replace_Header
-Adx.Code_Format.Replace_Header_Make
-
-Adx.Code_Format.Reformat_Default
-Adx.Code_Format.Reformat_Default_Make
-Adx.Code_Format.Reformat_Default_Parse
-Adx.Code_Format.Reformat_Default_Transform
-
-Adx.Code_Format.Reformat_Custom
-Adx.Code_Format.Reformat_Custom_Make
-Adx.Code_Format.Reformat_Custom_Parse
-Adx.Code_Format.Reformat_Custom_Transform
-
-Adx.Code_Format.Rename_Package
-Adx.Code_Format.Rename_Package_Make
-Adx.Code_Format.Rename_Package_Parse
-Adx.Code_Format.Rename_Package_Transform
-```
-
-##### Unit Structure 3
-```bash
-Adx.Code.Format.Header.Add_Header
-Adx.Code.Format.Header.Add_Header_Make
-Adx.Code.Format.Header.Add_Header_Parse
-Adx.Code.Format.Header.Add_Header_Transform
-
-Adx.Code.Format.Header.Remove_Header
-Adx.Code.Format.Header.Remove_Header_Make
-Adx.Code.Format.Header.Remove_Header_Parse
-Adx.Code.Format.Header.Remove_Header_Transform
-
-Adx.Code.Format.Header.Replace_Header
-Adx.Code.Format.Header.Replace_Header.Make
-
-Adx.Code.Format.Default.Reformat_Default
-Adx.Code.Format.Default.Reformat_Default_Make
-Adx.Code.Format.Default.Reformat_Default_Parse
-Adx.Code.Format.Default.Reformat_Default_Transform
-
-Adx.Code.Format.Custom.Reformat_Custom
-Adx.Code.Format.Custom.Reformat_Custom_Make
-Adx.Code.Format.Custom.Reformat_Custom_Parse
-Adx.Code.Format.Custom.Reformat_Custom_Transform
-
-Adx.Code.Format.Package.Rename_Package
-Adx.Code.Format.Package.Rename_Package_Make
-Adx.Code.Format.Package.Rename_Package_Parse
-Adx.Code.Format.Package.Rename_Package_Transform
 ```
