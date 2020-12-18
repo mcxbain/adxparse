@@ -1,37 +1,28 @@
 # Adxparse
 
-
-##### Unit Structure
 ```bash
-Adx.Code.Format.Header.Add
-Adx.Code.Format.Header.Add.Make
-Adx.Code.Format.Header.Add.Parse
-Adx.Code.Format.Header.Add.Transform
+Line metrics summed over 122 units
+  all lines            : 5397
+  code lines           : 2327
+  comment lines        : 1525
+  end-of-line comments : 15
+  comment percentage   : 39.97
+  blank lines          : 1545
 
-Adx.Code.Format.Header.Remove
-Adx.Code.Format.Header.Remove.Make
-Adx.Code.Format.Header.Remove.Parse
-Adx.Code.Format.Header.Remove.Transform
+Average lines in body: 10.73
 
-Adx.Code.Format.Default
-Adx.Code.Format.Default.Make
-Adx.Code.Format.Default.Parse
-Adx.Code.Format.Default.Transform
+Element metrics summed over 122 units
+  all statements      : 675
+  all declarations    : 1094
+  logical SLOC        : 1769
 
-Adx.Code.Format.Custom
-Adx.Code.Format.Custom.Make
-Adx.Code.Format.Custom.Parse
-Adx.Code.Format.Custom.Transform
+ 6 public types in 3 units
 
-Adx.Code.Analyse.Metric
-Adx.Code.Analyse.Metric.Make
+ 9 type declarations in 6 units
 
-Adx.Code.Analyse.Unitlist
-Adx.Code.Analyse.Unitlist.Make
+ 138 public subprograms in 55 units
 
-Adx.Code.Generate.Package
-Adx.Code.Generate.Package.Make
+ 146 subprogram bodies in 55 units
 
-Adx.Code.Rename.Package
-Adx.Code.Rename.Package.Make
+Average cyclomatic complexity: 1.86
 ```
