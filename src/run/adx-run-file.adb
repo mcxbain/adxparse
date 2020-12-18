@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                               ADX.RUNFILE                                --
+--                               ADX.RUN.FILE                               --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
@@ -26,7 +26,7 @@ use Ada.Strings.Unbounded;
 use Adx.Lib.Readdir;
 use Adx.Lib.Vectortype;
 
-package body Adx.Runfile is
+package body Adx.Run.File is
 
 function Getfiletype(File_Name:String) return String is
 
@@ -61,7 +61,7 @@ begin
 
 end Deletedictionary;
 
-procedure ParseFile(File_Path:String) is
+procedure Main(File_Path:String) is
 
    File_Name:String:=Ada.Directories.Simple_Name(File_Path);
    File_Type:String:=Getfiletype(File_Name);
@@ -103,6 +103,6 @@ begin
 
    end if;
 
-end ParseFile;
+end Main;
 
-end Adx.Runfile;
+end Adx.Run.File;

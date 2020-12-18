@@ -1,14 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                                ADX.RUNDIR                                --
+--                              ADX.RUN.UCOUNT                              --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.Rundir is
+package Adx.Run.Ucount is
 
-procedure ParseDirectory(Dir_Path:String; Dic_Name:String);
+procedure Main(Dir_Path:String);
 
-end Adx.Rundir;
+end Adx.Run.Ucount;

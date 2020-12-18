@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                                ADX.RUNDIR                                --
+--                               ADX.RUN.DIR                                --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
@@ -20,9 +20,9 @@ with Adx.App.Custom.Make;
 use Ada.Text_IO;
 use Adx.Lib.Vectortype;
 
-package body Adx.Rundir is
+package body Adx.Run.Dir is
 
-procedure ParseDirectory(Dir_Path:String; Dic_Name:String) is
+procedure Main(Dir_Path:String; Dic_Name:String) is
 
    Dictionary_String:String_Vector_Type;
    Checker:Boolean:=False;
@@ -72,6 +72,6 @@ begin
 
    end if;
 
-end ParseDirectory;
+end Main;
 
-end Adx.Rundir;
+end Adx.Run.Dir;

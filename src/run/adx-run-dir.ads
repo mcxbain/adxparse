@@ -1,14 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                              ADX.RUNRENAME                               --
+--                               ADX.RUN.DIR                                --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.Runrename is
+package Adx.Run.Dir is
 
-procedure Main(Dir_Path:String; Old_Name:String; New_Name:String);
+procedure Main(Dir_Path:String; Dic_Name:String);
 
-end Adx.Runrename;
+end Adx.Run.Dir;

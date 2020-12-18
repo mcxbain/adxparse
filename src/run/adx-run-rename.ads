@@ -1,20 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                              ADX.RUNMETRIC                               --
+--                              ADX.RUN.RENAME                              --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
---                                 B o d y                                  --
+--                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Adx.App.Metric.Make;
+package Adx.Run.Rename is
 
-package body Adx.Runmetric is
+procedure Main(Dir_Path:String; Old_Name:String; New_Name:String);
 
-procedure Main(Project_File:String) is
-
-begin
-   Adx.App.Metric.Make.MakeAll(Project_File);
-end Main;
-
-end Adx.Runmetric;
+end Adx.Run.Rename;

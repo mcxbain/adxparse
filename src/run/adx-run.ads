@@ -1,14 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                              ADX.RUNMETRIC                               --
+--                                 ADX.RUN                                  --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.Runmetric is
+package Adx.Run is
 
-procedure Main(Project_File:String);
+pragma Pure;
 
-end Adx.Runmetric;
+end Adx.Run;

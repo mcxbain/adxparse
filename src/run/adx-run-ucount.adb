@@ -1,14 +1,22 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                               ADX.RUNFILE                                --
+--                              ADX.RUN.UCOUNT                              --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
---                                 S p e c                                  --
+--                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.Runfile is
+with Adx.App.Ucount.Make;
 
-procedure ParseFile(File_Path:String);
+package body Adx.Run.Ucount is
 
-end Adx.Runfile;
+procedure Main(Dir_Path:String) is
+
+begin
+
+   Adx.App.Ucount.Make.MakeAll(Dir_Path);
+
+end Main;
+
+end Adx.Run.Ucount;

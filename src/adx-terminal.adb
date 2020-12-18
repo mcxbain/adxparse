@@ -11,11 +11,11 @@ with Ada.Text_IO;
 with Ada.Strings.Unbounded;
 with Adx.Lib.Getparam;
 with Adx.Lib.Regmatch;
-with Adx.Rundir;
-with Adx.Runfile;
-with Adx.App.Ucount.Make;
-with Adx.Runrename;
-with Adx.Runmetric;
+with Adx.Run.Ucount;
+with Adx.Run.Dir;
+with Adx.Run.File;
+with Adx.Run.Rename;
+with Adx.Run.Metric;
 
 use Ada.Text_IO;
 use Ada.Strings.Unbounded;
@@ -73,19 +73,27 @@ procedure Main is
 
 begin
 
-   -- Find Empty switch
+   -----------------------------------------------------------------------------
+   -- Empty switch
+   -----------------------------------------------------------------------------
    if My_String = "" then
       Put_Line(Help);
 
-      -- Find Help switch
+      -----------------------------------------------------------------------------
+      -- Help switch
+      -----------------------------------------------------------------------------
    elsif My_String = "-h" & Ascii.LF then
       Put_Line(Help);
 
-      -- Find Version switch
+      -----------------------------------------------------------------------------
+      -- Version switch
+      -----------------------------------------------------------------------------
    elsif My_String = "-v" & Ascii.LF then
       Put_Line(Version);
 
-      -- Find Directory switch
+      -----------------------------------------------------------------------------
+      -- Directory switch
+      -----------------------------------------------------------------------------
    elsif Adx.Lib.Regmatch.Regmatch(My_String, "-d\s(.*?)\s", My_Result) then
       --Put_Line("Directory switch found..");
 
@@ -97,15 +105,18 @@ begin
          if Adx.Lib.Regmatch.Regmatch(My_String, "-d\s.*?\s-p\s-c\s(.*?)\s", Dic_Name) then
 
             Put_Line(To_String(Dic_Name));
-            Adx.Rundir.ParseDirectory(To_String(My_Result), To_String(Dic_Name));
+            Adx.Run.Dir.Main(To_String(My_Result), To_String(Dic_Name));
 
          else
             Put_Line("Dictionary Name not found .. -c");
          end if;
 
+         ------------------------------------------------------------------------------
+         -- Ucount Switch
+         ------------------------------------------------------------------------------
       elsif Adx.Lib.Regmatch.Regmatch(My_String, "-d\s(.*?)\s-u", My_Result) then
          Put_Line("u switch found");
-         Adx.App.Ucount.Make.MakeAll(To_String(My_Result));
+         Adx.Run.Ucount.Main(To_String(My_Result));
 
       elsif Adx.Lib.Regmatch.Regmatch(My_String, "-d\s(.*?)\s-r", My_Result) then
          Put_Line("r switch found");
@@ -114,7 +125,7 @@ begin
          if Adx.Lib.Regmatch.Regmatch(My_String, "-d\s.*?\s-r\s(.*?)\s", Old_Name) then
 
             if Adx.Lib.Regmatch.Regmatch(My_String, "-d\s.*?\s-r\s.*?\s(.*?)\s", New_Name) then
-               Adx.Runrename.Main(To_String(My_Result), To_String(Old_Name), To_String(New_Name));
+               Adx.Run.Rename.Main(To_String(My_Result), To_String(Old_Name), To_String(New_Name));
             else
                Put_Line("new Name not found");
             end if;
@@ -127,15 +138,19 @@ begin
          Put_Line("Invalid Directory Switch.. -p for parse");
       end if;
 
-      --Find Metric Switch
+      ------------------------------------------------------------------------------
+      -- Metric Switch
+      ------------------------------------------------------------------------------
    elsif Adx.Lib.Regmatch.Regmatch(My_String, "-g\s(.*?)\s-m", My_Result) then
       Put_Line("m switch found");
-      Adx.Runmetric.Main(To_String(My_Result));
+      Adx.Run.Metric.Main(To_String(My_Result));
 
-      -- Find File switch
+      ------------------------------------------------------------------------------
+      -- File switch
+      ------------------------------------------------------------------------------
    elsif Adx.Lib.Regmatch.Regmatch(My_String, "-f\s(.*?)\s", My_Result) then
       --Put_Line("File switch found..");
-      Adx.Runfile.ParseFile(To_String(My_Result));
+      Adx.Run.File.Main(To_String(My_Result));
 
       -- Nothing found
    else
