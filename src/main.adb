@@ -16,12 +16,6 @@ procedure Main is
 
 begin
 
-
-
-   --Run.RunAdxLib;
-   --Terminal.Main;
    Adx.Terminal.Main;
-
-
 
 end Main;
