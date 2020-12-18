@@ -20,9 +20,9 @@ use Adx.Lib.Vectortype;
 package body Adx.Lib.Stringmod is
 
 ------------------------------------------------------------------------------
--- Trim CR
+-- Remove CR
 ------------------------------------------------------------------------------
-function Trim_CR(My_String:String) return String is
+function Remove_CR(My_String:String) return String is
 
    Return_String:Unbounded_String;
    Character_Number:Integer;
@@ -42,12 +42,12 @@ begin
 
    return To_String(Return_String);
 
-end Trim_CR;
+end Remove_CR;
 
 ------------------------------------------------------------------------------
--- Trim LF
+-- Remove LF
 ------------------------------------------------------------------------------
-function Trim_LF(My_String:String) return String is
+function Remove_LF(My_String:String) return String is
 
    Return_String:Unbounded_String;
    Character_Number:Integer;
@@ -66,7 +66,7 @@ begin
 
    return To_String(Return_String);
 
-end Trim_LF;
+end Remove_LF;
 
 ------------------------------------------------------------------------------
 -- Trim Whitespace
@@ -110,32 +110,6 @@ begin
    return S(1 .. Last);
 
 end Escape_Regexp;
-
-------------------------------------------------------------------------------
--- Integer To String
-------------------------------------------------------------------------------
-function Integer_To_String(My_Number:Integer) return String is
-
-   My_String:constant String:=Trim(Integer'Image(My_Number), Ada.Strings.Left);
-
-begin
-
-   return My_String;
-
-end Integer_To_String;
-
-------------------------------------------------------------------------------
--- String To Integer
-------------------------------------------------------------------------------
-function String_To_Integer(My_String:String) return Integer is
-
-   My_Integer:constant Integer:=Integer'Value(My_String);
-
-begin
-
-   return My_Integer;
-
-end String_To_Integer;
 
 ------------------------------------------------------------------------------
 -- Escape Quote
@@ -185,6 +159,45 @@ begin
    return To_String(Result);
 
 end Replace_Tab;
+
+------------------------------------------------------------------------------
+-- String To Integer
+------------------------------------------------------------------------------
+function String_To_Integer(My_String:String) return Integer is
+
+   My_Integer:constant Integer:=Integer'Value(My_String);
+
+begin
+
+   return My_Integer;
+
+end String_To_Integer;
+
+------------------------------------------------------------------------------
+-- Integer To String
+------------------------------------------------------------------------------
+function Integer_To_String(My_Number:Integer) return String is
+
+   My_String:constant String:=Trim(Integer'Image(My_Number), Ada.Strings.Left);
+
+begin
+
+   return My_String;
+
+end Integer_To_String;
+
+------------------------------------------------------------------------------
+-- Long Integer To String
+------------------------------------------------------------------------------
+function Long_Integer_To_String(My_Number:Long_Integer) return String is
+
+   My_String:constant String:=Trim(Long_Integer'Image(My_Number), Ada.Strings.Left);
+
+begin
+
+   return My_String;
+
+end Long_Integer_To_String;
 
 ------------------------------------------------------------------------------
 -- String Is Empty
@@ -261,12 +274,76 @@ end String_To_Upper_First_Sep;
 ------------------------------------------------------------------------------
 function String_To_Lower_All(My_String:String) return String is
 
-   Return_String:String:=Ada.Characters.Handling.To_Lower(My_String);
+   Return_String:constant String:=Ada.Characters.Handling.To_Lower(My_String);
 
 begin
 
    return Return_String;
 
 end String_To_Lower_All;
+
+------------------------------------------------------------------------------
+-- String To Character
+------------------------------------------------------------------------------
+function String_To_Character(My_String:String) return Character is
+
+   My_Character:Character;
+   Length_Error:exception;
+
+begin
+
+   if My_String'Length > 1 then
+
+      raise Length_Error;
+
+   else
+
+      My_Character:=My_String(My_String'First);
+      return My_Character;
+
+   end if;
+
+end String_To_Character;
+
+------------------------------------------------------------------------------
+-- Character To String
+------------------------------------------------------------------------------
+function Character_To_String(My_Character:Character) return String is
+
+   My_String:constant String(1 .. 1):="" & My_Character;
+
+begin
+
+   return My_String;
+
+end Character_To_String;
+
+------------------------------------------------------------------------------
+-- Integer To Character
+------------------------------------------------------------------------------
+function Integer_To_Character(My_Number:Integer) return Character is
+
+   My_Character:Character;
+
+begin
+
+   My_Character:=Character'Val(My_Number);
+   return My_Character;
+
+end Integer_To_Character;
+
+------------------------------------------------------------------------------
+-- Character To Integer
+------------------------------------------------------------------------------
+function Character_To_Integer(My_Character:Character) return Integer is
+
+   My_Integer:Integer;
+
+begin
+
+   My_Integer:=Character'Pos(My_Character);
+   return My_Integer;
+
+end Character_To_Integer;
 
 end Adx.Lib.Stringmod;

@@ -1,5 +1,4 @@
 With Ada.Text_IO;
-With Adx.Lib.Printchar;
 With Adx.App.Rename.Make;
 
 use Ada.Text_IO;

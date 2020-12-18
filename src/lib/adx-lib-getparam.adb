@@ -37,7 +37,7 @@ end Get_Parameter_List;
 ------------------------------------------------------------------------------
 function Get_Parameter_String return String is
 
-   My_Vector:String_Vector_Type:=Get_Parameter_List;
+   My_Vector:constant String_Vector_Type:=Get_Parameter_List;
    My_String:Unbounded_String;
 
 begin

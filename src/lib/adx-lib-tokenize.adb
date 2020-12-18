@@ -12,34 +12,45 @@ package body Adx.Lib.Tokenize is
 ------------------------------------------------------------------------------
 -- Tokenize
 ------------------------------------------------------------------------------
-function Tokenize(My_String:in String; Delimiter:in String) return String_Vector_Type is
+function Tokenize(Source_String:in String; Pattern_String:in String) return String_Vector_Type is
 
-   Result_Vector:String_Vector_Type;
-   Current_Position:Natural:=1;
+   Buffer:String(Pattern_String'First .. Pattern_String'Last);
+   Buffer_Length:constant Natural:=Pattern_String'Last;
+   Last_Pos:Natural:=Pattern_String'First;
+   My_Vector:String_Vector_Type;
 
 begin
 
-   for K in 1 .. My_String'Last loop
+   for K in Source_String'First .. Source_String'Last loop
 
-      --den ersten string
-      if (My_String(K .. K) = Delimiter) then
+      --build up the buffer
+      if K >= Buffer_Length then
 
-         Result_Vector.Append(My_String(Current_Position .. K - 1));
-         Current_Position:=K + 1;
+         Buffer(1 .. Buffer_Length):=Source_String(K - Buffer_Length + 1 .. K);
 
-      end if;
+         if Buffer = Pattern_String then
 
-      --den letzten string
-      if K = My_String'Last then
+            -- capture the first string only when it does not begin with delimiter:example ###Testa###Testb###Testc###Testd
+            if K = Buffer_Length then
+               null;
+            else
+               My_Vector.Append(Source_String(Last_Pos .. K - Buffer_Length));
+            end if;
 
-         Result_Vector.Append(My_String(Current_Position .. K));
-         Current_Position:=K + 1;
+            Last_Pos:=K + 1;
+
+         end if;
 
       end if;
 
    end loop;
 
-   return Result_Vector;
+   -- capture the last string only when it does not end with delimiter:example Testa###Testb###Testc###Testd###
+   if Last_Pos <= Source_String'Last then
+      My_Vector.Append(Source_String(Last_Pos .. Source_String'Last));
+   end if;
+
+   return My_Vector;
 
 end Tokenize;
 
