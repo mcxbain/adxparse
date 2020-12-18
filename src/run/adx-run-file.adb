@@ -9,17 +9,18 @@
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
 with Ada.Strings.Unbounded;
+with Ada.Directories;
 with Adx.Lib.Filecheck;
 with Adx.Lib.Readdir;
-with Ada.Directories;
+with Adx.Lib.Writefile;
+with Adx.Lib.Deletefile;
+with Adx.Lib.Vectortype;
 with Adx.App.Rmheader.Parse;
 with Adx.App.AddHeader.Parse;
 with Adx.App.Format.Parse;
 with Adx.App.Custom.Parse;
 with Adx.App.Format.Dictionary;
-with Adx.Lib.Writefile;
-with Adx.Lib.Deletefile;
-with Adx.Lib.Vectortype;
+
 
 use Ada.Text_IO;
 use Ada.Strings.Unbounded;
