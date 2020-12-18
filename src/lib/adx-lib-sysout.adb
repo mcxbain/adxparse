@@ -7,12 +7,10 @@
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Ada.Strings.Unbounded;
 with System;
 with Interfaces.C;
 with Interfaces.C_Streams;
 
-use Ada.Strings.Unbounded;
 use System;
 
 package body Adx.Lib.Sysout is
@@ -48,9 +46,7 @@ function Sysout(Command:String) return Unbounded_String is
    Close_Status:Interfaces.C_Streams.int;
 
    Buffer_Size:constant Integer:=1_048_576;
-   -- https://unix.stackexchange.com/questions/11946/how-big-is-the-pipe-buffer 
-   -- cat /proc/sys/fs/pipe-max-size 
-   -- Pipe Max Size 1048576 Bytes. The char type takes 1 Byte of memory
+   -- cat /proc/sys/fs/pipe-max-size
 
    Buffer_Content:Unbounded_String;
 

@@ -20,5 +20,7 @@ function Integer_To_String(My_Number:Integer) return String;
 function String_Is_Empty(My_String:String) return Boolean;
 function String_To_Upper_All(My_String:String) return String;
 function String_To_Upper_First(My_String:String) return String;
+function String_To_Upper_First_Sep(My_String:String; My_Sep:String) return String;
+function String_To_Lower_All(My_String:String) return String;
 
 end Adx.Lib.Stringmod;

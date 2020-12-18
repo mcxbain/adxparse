@@ -17,7 +17,7 @@ package body Adx.Lib.Mkheader is
 ------------------------------------------------------------------------------
 function Make_Header_Adb(My_String:String) return String is
 
-   Line:String:=Make_Line(My_String);
+   Line:constant String:=Make_Line(My_String);
    Result:Unbounded_String;
 
 begin
@@ -41,7 +41,7 @@ end Make_Header_Adb;
 ------------------------------------------------------------------------------
 function Make_Header_Ads(My_String:String) return String is
 
-   Line:String:=Make_Line(My_String);
+   Line:constant String:=Make_Line(My_String);
    Result:Unbounded_String;
 
 begin
@@ -65,11 +65,11 @@ end Make_Header_Ads;
 ------------------------------------------------------------------------------
 function Make_Line(My_String:String) return String is
 
-   Modcalc:Integer:=My_String'Length mod 2;
-   A:Integer:=74 - (My_String'Length); -- 76 because 80-4 Line lenght 80
+   Modcalc:constant Integer:=My_String'Length mod 2;
+   A:constant Integer:=74 - (My_String'Length); -- 76 because 80-4 Line lenght 80
 
-   B:Integer:=2;
-   Lencalc:Integer:=(A / B);
+   B:constant Integer:=2;
+   Lencalc:constant Integer:=(A / B);
 
    Result:Unbounded_String;
 

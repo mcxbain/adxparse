@@ -10,9 +10,12 @@
 with Ada.Strings.Fixed;
 with Ada.Strings.Unbounded;
 with Ada.Characters.Handling;
+with Adx.Lib.Vectortype;
+with Adx.Lib.Tokenize;
 
 use Ada.Strings.Unbounded;
 use Ada.Strings.Fixed;
+use Adx.Lib.Vectortype;
 
 package body Adx.Lib.Stringmod is
 
@@ -113,7 +116,7 @@ end Escape_Regexp;
 ------------------------------------------------------------------------------
 function Integer_To_String(My_Number:Integer) return String is
 
-   My_String:String:=Trim(Integer'Image(My_Number), Ada.Strings.Left);
+   My_String:constant String:=Trim(Integer'Image(My_Number), Ada.Strings.Left);
 
 begin
 
@@ -126,7 +129,7 @@ end Integer_To_String;
 ------------------------------------------------------------------------------
 function String_To_Integer(My_String:String) return Integer is
 
-   My_Integer:Integer:=Integer'Value(My_String);
+   My_Integer:constant Integer:=Integer'Value(My_String);
 
 begin
 
@@ -203,7 +206,7 @@ end String_Is_Empty;
 ------------------------------------------------------------------------------
 function String_To_Upper_All(My_String:String) return String is
 
-   Return_String:String:=Ada.Characters.Handling.To_Upper(My_String);
+   Return_String:constant String:=Ada.Characters.Handling.To_Upper(My_String);
 
 begin
 
@@ -216,12 +219,54 @@ end String_To_Upper_All;
 ------------------------------------------------------------------------------
 function String_To_Upper_First(My_String:String) return String is
 
-   Return_String:String:=Ada.Characters.Handling.To_Upper(My_String(My_String'First .. My_String'First)) & My_String(My_String'First + 1 .. My_String'Last);
+   Return_String:constant String:=Ada.Characters.Handling.To_Upper(My_String(My_String'First .. My_String'First)) & My_String(My_String'First + 1 .. My_String'Last);
 
 begin
 
    return Return_String;
 
 end String_To_Upper_First;
+
+------------------------------------------------------------------------------
+-- String To Upper First Sep
+------------------------------------------------------------------------------
+function String_To_Upper_First_Sep(My_String:String; My_Sep:String) return String is
+
+   My_Vector:String_Vector_Type;
+   My_Result:Unbounded_String;
+   My_Element:Unbounded_String;
+
+begin
+
+   My_Vector:=Adx.Lib.Tokenize.Tokenize(My_String, My_Sep);
+
+   for I in My_Vector.First_Index .. My_Vector.Last_Index loop
+
+      My_Element:=To_Unbounded_String(My_Vector.Element(Index => I));
+
+      Append(My_Result, Adx.Lib.Stringmod.String_To_Upper_First(To_String(My_Element)));
+
+      if I < My_Vector.Last_Index then
+         Append(My_Result, My_Sep);
+      end if;
+
+   end loop;
+
+   return To_String(My_Result);
+
+end String_To_Upper_First_Sep;
+
+------------------------------------------------------------------------------
+-- String To Lower All
+------------------------------------------------------------------------------
+function String_To_Lower_All(My_String:String) return String is
+
+   Return_String:String:=Ada.Characters.Handling.To_Lower(My_String);
+
+begin
+
+   return Return_String;
+
+end String_To_Lower_All;
 
 end Adx.Lib.Stringmod;

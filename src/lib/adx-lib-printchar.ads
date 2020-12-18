@@ -1,14 +1,15 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                               ADX.APP.LIB                                --
+--                            ADX.LIB.PRINTCHAR                             --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.App.Lib is
+package Adx.Lib.Printchar is
 
-   pragma Pure;
+-- List of Chars Ada.Characters.Latin_1 a-chlat1.ads
+procedure Printchar(My_String:String);
 
-end Adx.App.Lib;
+end Adx.Lib.Printchar;

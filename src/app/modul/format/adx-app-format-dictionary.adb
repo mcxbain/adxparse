@@ -69,5 +69,23 @@ package body Adx.app.format.dictionary is
 
    end GetAdxTools;
    
+   
+   function GetAdxFormat return String_Vector_Type is
+
+      My_Vector : String_Vector_Type;
+
+   begin
+
+      My_Vector.Append("*AddHeader*");
+      My_Vector.Append("*MakeAll*");
+      My_Vector.Append("*MakeRename*");
+      My_Vector.Append("*MakeParse*");
+      My_Vector.Append("*GetFilePath*");
+      
+
+      return My_Vector;
+
+   end GetAdxFormat;
+   
 
 end Adx.app.format.dictionary;

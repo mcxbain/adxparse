@@ -1,0 +1,89 @@
+with Ada.Text_IO;
+With Adx.Lib.Vectortype;
+with Adx.Lib.Dircheck;
+with Adx.Lib.Filecheck;
+with Adx.Lib.Regcheck;
+with Adx.App.Format.Dictionary;
+with Adx.App.Format.Make;
+with Adx.App.AddHeader.Make;
+with Adx.App.RmHeader.Make;
+with Adx.App.Custom.Make;
+with Ada.Directories;
+
+use Ada.Text_IO;
+use Adx.Lib.Vectortype;
+
+
+package body adx.run is
+
+   procedure ParseDirectory(Dir_Path:String) is
+      
+      Dictionary_String:String_Vector_Type:=Adx.App.Format.Dictionary.Getadxlib;
+      Checker:Boolean:=False;
+      
+   begin
+      
+      
+      --check if dir exists;
+      if Adx.Lib.Dircheck.Dircheck(Dir_Path) then
+
+         --to avoid anny danger we just add here allowed directorys
+         if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/git") then
+            Checker:=True;
+         end if;
+
+         if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/parse06/src/lib") then
+            Checker:=True;
+         end if;
+
+         -- if Adx.Lib.Regcheck.Regcheck(Project_Dir, "^/home/mcxbain/ada") then
+         --   Checker:=True;
+         -- end if;
+
+         if Checker = True then
+
+            Adx.App.RmHeader.Make.MakeAll(Dir_Path);
+            Adx.App.AddHeader.Make.MakeAll(Dir_Path);
+            Adx.App.Format.Make.MakeAll(Dir_Path, Dictionary_String);
+            Adx.App.Custom.Make.MakeAll(Dir_Path);
+
+         else
+            Put_Line("Directory not allowed..");
+         end if;
+
+      else
+
+         Put_Line("Directory dosent exist..");
+
+      end if;
+  
+   end ParseDirectory;
+   
+   
+   
+   procedure ParseFile(File_Path:String) is
+      
+    File_Name:=Ada.Directories.Simple_Name(File_Path));
+      
+   begin 
+      
+      --check if File exists;
+      if Adx.Lib.Filecheck.Filecheck(File_Path) then
+      
+         put_line(Ada.Directories.Simple_Name(File_Path));
+         --check if file is adb or ads..
+         --build up directory type;
+         
+         put_line("File exists..");
+
+        
+
+      else
+
+         Put_Line("File dosent exist..");
+
+      end if;
+      
+   end ParseFile;
+
+end adx.run;

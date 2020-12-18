@@ -58,7 +58,10 @@ begin
       Result := Adx.Lib.Sysout.Sysout("gnatpp -D "&Dic_File&" --use-on-new-line --RM-style-spacing -A1 -c1 -aM -nM -i3 -M256 -rnb " & File_Path);
       
       -- do not chnage comments
-       --Result := Adx.Lib.Sysout.Sysout("gnatpp -D "&Dic_File&" --comments-fill --use-on-new-line --RM-style-spacing -A1 -c1 -aM -nM -i3 -M256 -rnb " & File_Path);
+      --Result := Adx.Lib.Sysout.Sysout("gnatpp -D "&Dic_File&" --comments-fill --use-on-new-line --RM-style-spacing -A1 -c1 -aM -nM -i3 -M256 -rnb " & File_Path);
+      
+      -- no dic
+      --Result := Adx.Lib.Sysout.Sysout("gnatpp --use-on-new-line --RM-style-spacing -A1 -c1 -aM -nM -i3 -M256 -rnb " & File_Path);
             
 
    end ParseRecord;

@@ -9,16 +9,17 @@
 ------------------------------------------------------------------------------
 with Ada.Directories;
 
-package Body Adx.lib.deletefile is
+package body Adx.Lib.Deletefile is
 
-   procedure Deletefile(File_Name:String) is
-      
-   begin
-      
-      Ada.Directories.Delete_File(File_Name);
-    
-      
-   end Deletefile;
-   
+------------------------------------------------------------------------------
+-- Delete File
+------------------------------------------------------------------------------
+procedure Deletefile(File_Name:String) is
 
-end Adx.lib.deletefile;
+begin
+
+   Ada.Directories.Delete_File(File_Name);
+
+end Deletefile;
+
+end Adx.Lib.Deletefile;

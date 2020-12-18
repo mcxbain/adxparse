@@ -32,4 +32,7 @@ subtype Directory_Vector_Type is Vector_Container.Vector;
 function Readdir(Dir_Path:String; File_Extension:String) return Directory_Vector_Type;
 procedure Walk(Name:String; Pattern:String; My_Vector:in out Directory_Vector_Type);
 
+procedure Print_Path(My_Vector:Directory_Vector_Type);
+procedure Print_Name(My_Vector:Directory_Vector_Type);
+
 end Adx.Lib.Readdir;

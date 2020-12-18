@@ -7,9 +7,8 @@
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.lib.deletefile is
+package Adx.Lib.Deletefile is
 
-   procedure Deletefile(File_Name:String);
-   
+procedure Deletefile(File_Name:String);
 
-end Adx.lib.deletefile;
+end Adx.Lib.Deletefile;

@@ -7,10 +7,10 @@
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Ada.Strings.Unbounded;
+with Ada.Text_IO;
 with Ada.Directories;
 
-use Ada.Strings.Unbounded;
+use Ada.Text_IO;
 use Ada.Directories;
 
 package body Adx.Lib.Readdir is
@@ -70,5 +70,39 @@ begin
    Search(Name, Pattern, (others => True), Print'Access);
    Search(Name, "", (Directory => True, others => False), Walk'Access);
 end Walk;
+
+------------------------------------------------------------------------------
+-- Print Path
+------------------------------------------------------------------------------
+procedure Print_Path(My_Vector:Directory_Vector_Type) is
+
+   My_Record:Directory_Record_Type;
+begin
+
+   for I in My_Vector.First_Index .. My_Vector.Last_Index loop
+
+      My_Record:=(My_Vector.Element(Index => I));
+      Put_Line(To_String(My_Record.File_Path));
+
+   end loop;
+
+end Print_Path;
+
+------------------------------------------------------------------------------
+-- Print Name
+------------------------------------------------------------------------------
+procedure Print_Name(My_Vector:Directory_Vector_Type) is
+
+   My_Record:Directory_Record_Type;
+begin
+
+   for I in My_Vector.First_Index .. My_Vector.Last_Index loop
+
+      My_Record:=(My_Vector.Element(Index => I));
+      Put_Line(To_String(My_Record.File_Name));
+
+   end loop;
+
+end Print_Name;
 
 end Adx.Lib.Readdir;

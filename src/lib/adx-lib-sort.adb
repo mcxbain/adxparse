@@ -7,8 +7,6 @@
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Ada.Containers.Indefinite_Vectors;
-
 package body Adx.Lib.Sort is
 
 function Sort(My_Vector:in String_Vector_Type) return String_Vector_Type is

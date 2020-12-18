@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Lib.Replace is
 
-function Replace(My_String:String; Pattern:String; Replace:String) return String;
+function Replace(Source_String:String; Pattern_String:String; Replace_String:String) return String;
 
 end Adx.Lib.Replace;

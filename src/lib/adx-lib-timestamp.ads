@@ -1,23 +1,15 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                           ADX.APP.LIB.FILELIST                           --
+--                            ADX.LIB.TIMESTAMP                             --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-With Adx.Lib.Readdir;
-Use Adx.Lib.Readdir;
+package Adx.Lib.Timestamp is
 
-package Adx.App.Lib.FileList is
-   
-   function GetFileListAll(Dir_Path:String) return Directory_Vector_Type;
-   function GetfileListAds(Dir_Path:String) return Directory_Vector_Type;
-   function GetFileListAdb(Dir_Path:String) return Directory_Vector_Type;
-   function GetFileListGpr(Dir_Path:String) return Directory_Vector_Type;
-   
-   procedure PrintPath(My_Vector:Directory_Vector_Type);
-   procedure PrintName(My_Vector:Directory_Vector_Type);
+function Get_Unix_Time return Long_Integer;
+function Get_Ada_Time return Long_Integer;
 
-end Adx.App.Lib.FileList;
+end Adx.Lib.Timestamp;

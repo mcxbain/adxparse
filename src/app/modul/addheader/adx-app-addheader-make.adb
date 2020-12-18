@@ -8,7 +8,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 With Ada.Text_IO;
-With Adx.App.Lib.FileList;
+With Adx.Lib.FileList;
 With Adx.lib.Readdir;
 With Adx.App.AddHeader.Parse;
 
@@ -47,7 +47,7 @@ package Body Adx.App.AddHeader.Make is
     
    begin 
    
-      My_Vector:=Adx.App.Lib.FileList.GetFileListAds(Dir_Path);
+      My_Vector:=Adx.Lib.FileList.Get_File_List_Ads(Dir_Path);
       Adx.App.AddHeader.Parse.ParseVectorAds(My_Vector);
    
    end MakeAds;
@@ -62,7 +62,7 @@ package Body Adx.App.AddHeader.Make is
     
    begin 
     
-      My_Vector:=Adx.App.Lib.FileList.GetFileListAdb(Dir_Path);
+      My_Vector:=Adx.Lib.FileList.Get_File_List_Adb(Dir_Path);
       Adx.App.AddHeader.Parse.ParseVectorAdb(My_Vector);  
    
    end MakeAdb;

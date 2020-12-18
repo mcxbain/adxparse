@@ -27,7 +27,7 @@ begin
       Ada.Text_IO.Open(File => My_File, Name => File_Name, Mode => Out_File);
    exception
       when Ada.IO_Exceptions.Name_Error =>
-         Put_Line("File dose not exists Creating File");
+         --Put_Line("File dose not exists Creating File");
          Ada.Text_IO.Create(My_File, Mode => Out_File, Name => File_Name);
    end;
 
