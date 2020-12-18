@@ -1,5 +1,14 @@
-package adx.runmetric is
+------------------------------------------------------------------------------
+--                                                                          --
+--                              ADX.RUNMETRIC                               --
+--                                                                          --
+--                                  A D A                                   --
+--                                                                          --
+--                                 S p e c                                  --
+--                                                                          --
+------------------------------------------------------------------------------
+package Adx.Runmetric is
 
-   procedure main(Project_File:String);
+procedure Main(Project_File:String);
 
-end adx.runmetric;
+end Adx.Runmetric;

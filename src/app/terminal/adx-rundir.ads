@@ -1,5 +1,14 @@
-package adx.rundir is
+------------------------------------------------------------------------------
+--                                                                          --
+--                                ADX.RUNDIR                                --
+--                                                                          --
+--                                  A D A                                   --
+--                                                                          --
+--                                 S p e c                                  --
+--                                                                          --
+------------------------------------------------------------------------------
+package Adx.Rundir is
 
-   procedure ParseDirectory(Dir_Path:String; Dic_Name:String);
+procedure ParseDirectory(Dir_Path:String; Dic_Name:String);
 
-end adx.rundir;
+end Adx.Rundir;

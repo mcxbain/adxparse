@@ -1,11 +1,20 @@
+------------------------------------------------------------------------------
+--                                                                          --
+--                              ADX.RUNMETRIC                               --
+--                                                                          --
+--                                  A D A                                   --
+--                                                                          --
+--                                 B o d y                                  --
+--                                                                          --
+------------------------------------------------------------------------------
 with Adx.App.Metric.Make;
 
-package body adx.runmetric is
+package body Adx.Runmetric is
 
-   procedure main(Project_File:String) is
-      
-   begin
-      Adx.App.Metric.Make.MakeAll(Project_File);
-   end main;
+procedure Main(Project_File:String) is
 
-end adx.runmetric;
+begin
+   Adx.App.Metric.Make.MakeAll(Project_File);
+end Main;
+
+end Adx.Runmetric;

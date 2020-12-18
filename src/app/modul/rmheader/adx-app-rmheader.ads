@@ -7,8 +7,8 @@
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.App.RmHeader is
+package Adx.App.Rmheader is
 
-      pragma Pure;
-  
-end Adx.App.RmHeader;
+pragma Pure;
+
+end Adx.App.Rmheader;

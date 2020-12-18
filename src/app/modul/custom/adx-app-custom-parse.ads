@@ -7,18 +7,16 @@
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-With Adx.Lib.Vectortype;
-With Adx.Lib.Readdir;
+with Adx.Lib.Vectortype;
+with Adx.Lib.Readdir;
 
-Use Adx.Lib.Vectortype;
-Use Adx.Lib.Readdir;
+use Adx.Lib.Vectortype;
+use Adx.Lib.Readdir;
 
 package Adx.App.Custom.Parse is
 
-  
-  procedure ParseVector(My_Vector:Directory_Vector_Type);
-  procedure ParseRecord(My_Record:Directory_Record_Type);
-  function ParseFile(My_Vector:String_Vector_Type) return String_Vector_Type;
-
+procedure ParseVector(My_Vector:Directory_Vector_Type);
+procedure ParseRecord(My_Record:Directory_Record_Type);
+function ParseFile(My_Vector:String_Vector_Type) return String_Vector_Type;
 
 end Adx.App.Custom.Parse;

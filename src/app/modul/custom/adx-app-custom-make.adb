@@ -7,66 +7,61 @@
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-With Ada.Text_IO;
-With Adx.Lib.Readdir;
-With Adx.Lib.FileList;
-With Adx.App.Custom.Parse;
+with Ada.Text_IO;
+with Adx.Lib.Readdir;
+with Adx.Lib.Filelist;
+with Adx.App.Custom.Parse;
 
 use Ada.Text_IO;
 use Adx.Lib.Readdir;
 
-
-package Body Adx.App.Custom.Make is
-
+package body Adx.App.Custom.Make is
 
 ------------------------------------------------------------------------------
 -- Make All
------------------------------------------------------------------------------- 
-   procedure MakeAll(Dir_Path:String) is
-   
-   begin
-   
-      put_line("------------------------------------------------------------------------------");
-      put_line("-- Modul Custom  -------------------------------------------------------------");
-      put_line("------------------------------------------------------------------------------");
-      
-      MakeAds(Dir_Path);
-      MakeAdb(Dir_Path);
-      
-      put_line("------------------------------------------------------------------------------");
-      new_line;
-   
-   end MakeAll;
-   
-   
+------------------------------------------------------------------------------
+procedure MakeAll(Dir_Path:String) is
+
+begin
+
+   Put_Line("------------------------------------------------------------------------------");
+   Put_Line("-- Modul Custom  -------------------------------------------------------------");
+   Put_Line("------------------------------------------------------------------------------");
+
+   MakeAds(Dir_Path);
+   MakeAdb(Dir_Path);
+
+   Put_Line("------------------------------------------------------------------------------");
+   New_Line;
+
+end MakeAll;
+
 ------------------------------------------------------------------------------
 -- Make Ads
 ------------------------------------------------------------------------------
-   procedure MakeAds(Dir_Path:String) is
-   
-    My_Vector:Directory_Vector_Type;
-    
-   begin 
-  
-   My_Vector:=Adx.Lib.FileList.Get_File_List_Ads(Dir_Path);
+procedure MakeAds(Dir_Path:String) is
+
+   My_Vector:Directory_Vector_Type;
+
+begin
+
+   My_Vector:=Adx.Lib.Filelist.Get_File_List_Ads(Dir_Path);
    Adx.App.Custom.Parse.ParseVector(My_Vector);
-   
-   end MakeAds;
-   
-   
+
+end MakeAds;
+
 ------------------------------------------------------------------------------
 -- Make Adb
 ------------------------------------------------------------------------------
-   procedure MakeAdb(Dir_Path:String) is
-   
-    My_Vector:Directory_Vector_Type;
-    
-   begin 
-   
-   My_Vector:=Adx.Lib.FileList.Get_File_List_Adb(Dir_Path); 
+procedure MakeAdb(Dir_Path:String) is
+
+   My_Vector:Directory_Vector_Type;
+
+begin
+
+   My_Vector:=Adx.Lib.Filelist.Get_File_List_Adb(Dir_Path);
    Adx.App.Custom.Parse.ParseVector(My_Vector);
-   
-   end MakeAdb;
-   
-   
-   end Adx.App.Custom.Make;
+
+end MakeAdb;
+
+end Adx.App.Custom.Make;

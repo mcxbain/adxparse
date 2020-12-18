@@ -27,7 +27,7 @@ package body Adx.App.Rename.Parse is
 ------------------------------------------------------------------------------
 -- Parse File
 ------------------------------------------------------------------------------
-procedure Parsefile(File_Path:String; Old_Name:String; New_Name:String) is
+procedure ParseFile(File_Path:String; Old_Name:String; New_Name:String) is
 
    My_Vector:String_Vector_Type;
    My_Line:Unbounded_String;
@@ -52,7 +52,7 @@ begin
    --Print_Vector(My_Buffer);
    Adx.Lib.Writefile.Writefile(File_Path, My_Buffer);
 
-end Parsefile;
+end ParseFile;
 
 ------------------------------------------------------------------------------
 -- Rename
@@ -73,7 +73,7 @@ begin
 
       My_Record:=My_Vector.Element(Index => I);
       Put_Line(To_String(My_Record.File_Path));
-      Parsefile(To_String(My_Record.File_Path), Old_Name_Mod, New_Name_Mod);
+      ParseFile(To_String(My_Record.File_Path), Old_Name_Mod, New_Name_Mod);
 
    end loop;
 

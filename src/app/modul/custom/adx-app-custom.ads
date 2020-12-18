@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.App.Custom is
 
-   pragma Pure;
+pragma Pure;
 
 end Adx.App.Custom;

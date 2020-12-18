@@ -7,15 +7,14 @@
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-With Adx.Lib.Vectortype;
-Use Adx.Lib.Vectortype;
+with Adx.Lib.Vectortype;
+use Adx.Lib.Vectortype;
 
-package Adx.app.format.dictionary is
+package Adx.App.Format.Dictionary is
 
-   Procedure InitCurrentDirectory;
-   function GetDictionaryFileName return String;
-   function GetAdxLib return String_Vector_Type;
-   function GetAdxTools return String_Vector_Type;
-   function GetAdxFormat return String_Vector_Type;
+procedure InitCurrentDirectory;
+function GetDictionaryFilename return String;
+function GetAdxLib return String_Vector_Type;
+function GetAdxParse return String_Vector_Type;
 
-end Adx.app.format.dictionary;
+end Adx.App.Format.Dictionary;

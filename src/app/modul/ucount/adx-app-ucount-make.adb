@@ -24,7 +24,6 @@ use Adx.Lib.Readdir;
 
 package body Adx.App.Ucount.Make is
 
-
 ------------------------------------------------------------------------------
 -- Make All
 ------------------------------------------------------------------------------
@@ -45,10 +44,7 @@ begin
 
    end loop;
 
-  Result_Vector:=Adx.Lib.Sort.Sort(Result_Vector);
-
-
-
+   Result_Vector:=Adx.Lib.Sort.Sort(Result_Vector);
 
    MakeExtend(Result_Vector);
 

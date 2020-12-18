@@ -7,8 +7,8 @@
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.app.format is
+package Adx.App.Format is
 
-      pragma Pure;
+pragma Pure;
 
-end Adx.app.format;
+end Adx.App.Format;

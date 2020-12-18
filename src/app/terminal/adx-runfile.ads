@@ -1,5 +1,14 @@
-package adx.runfile is
+------------------------------------------------------------------------------
+--                                                                          --
+--                               ADX.RUNFILE                                --
+--                                                                          --
+--                                  A D A                                   --
+--                                                                          --
+--                                 S p e c                                  --
+--                                                                          --
+------------------------------------------------------------------------------
+package Adx.Runfile is
 
-      procedure ParseFile(File_Path:String);
+procedure ParseFile(File_Path:String);
 
-end adx.runfile;
+end Adx.Runfile;
