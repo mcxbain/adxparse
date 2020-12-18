@@ -17,7 +17,7 @@ package body Adx.App.Custom.Transform is
 ------------------------------------------------------------------------------
 -- Transform Line Space
 ------------------------------------------------------------------------------
-function TransformLinespace(My_String:String) return String is
+function TransformLineSpace(My_String:String) return String is
 
    Result:Unbounded_String:=To_Unbounded_String(My_String);
 
@@ -43,7 +43,7 @@ begin
 
    return To_String(Result);
 
-end TransformLinespace;
+end TransformLineSpace;
 
 ------------------------------------------------------------------------------
 -- Transform Brackets

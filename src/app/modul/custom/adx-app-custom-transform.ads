@@ -9,7 +9,7 @@
 ------------------------------------------------------------------------------
 package Adx.App.Custom.Transform is
 
-function TransformLinespace(My_String:String) return String;
+function TransformLineSpace(My_String:String) return String;
 function TransformBrackets(My_String:String) return String;
 function TransformColon(My_String:String) return String;
 function TransformColonEqual(My_String:String) return String;

@@ -83,7 +83,7 @@ begin
    My_Vector.Append("*ParseRecordAdb*");
 
    -- Transform
-   My_Vector.Append("*TransformLinespace*");
+   My_Vector.Append("*TransformLineSpace*");
    My_Vector.Append("*TransformBrackets*");
    My_Vector.Append("*TransformColon*");
    My_Vector.Append("*TransformColonEqual*");
