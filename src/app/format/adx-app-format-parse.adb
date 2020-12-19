@@ -9,16 +9,11 @@
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
 with Ada.Strings.Unbounded;
-with Adx.Lib.Vectortype;
-with Adx.Lib.Readdir;
 with Adx.Lib.Sysout;
-with Adx.Lib.Writefile;
-with Adx.Lib.Deletefile;
 with Adx.App.Format.Dictionary;
 
 use Ada.Text_IO;
 use Ada.Strings.Unbounded;
-use Adx.Lib.Readdir;
 
 package body Adx.App.Format.Parse is
 
@@ -45,9 +40,12 @@ end ParseVector;
 ------------------------------------------------------------------------------
 procedure ParseRecord(My_Record:Directory_Record_Type) is
 
-   File_Path:String:=To_String(My_Record.File_Path);
-   Dic_File:String:=Adx.App.Format.Dictionary.GetDictionaryFilename;
+   File_Path:constant String:=To_String(My_Record.File_Path);
+   Dic_File:constant String:=Adx.App.Format.Dictionary.GetDictionaryFilename;
    Result:Unbounded_String;
+
+   --  This suppresses warnings about the entities being unreferenced
+   pragma Unreferenced(Result);
 
 begin
 

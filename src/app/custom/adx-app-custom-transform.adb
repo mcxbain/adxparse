@@ -26,7 +26,7 @@ begin
    if My_String'Length > 3 then
 
       declare
-         Substr:String:=My_String(My_String'First .. My_String'First + 2);
+         Substr:constant String:=My_String(My_String'First .. My_String'First + 2);
 
       begin
 
@@ -51,8 +51,8 @@ end TransformLineSpace;
 function TransformBrackets(My_String:String) return String is
 
    Result:Unbounded_String;
-   Before:String:=" " & "(";
-   After:String:="(";
+   Before:constant String:=" " & "(";
+   After:constant String:="(";
 
 begin
 
@@ -67,8 +67,8 @@ end TransformBrackets;
 function TransformColon(My_String:String) return String is
 
    Result:Unbounded_String;
-   Before:String:=":" & " ";
-   After:String:=":";
+   Before:constant String:=":" & " ";
+   After:constant String:=":";
 
 begin
 
@@ -83,8 +83,8 @@ end TransformColon;
 function TransformColonEqual(My_String:String) return String is
 
    Result:Unbounded_String;
-   Before:String:=" " & ":= ";
-   After:String:=":=";
+   Before:constant String:=" " & ":= ";
+   After:constant String:=":=";
 
 begin
 

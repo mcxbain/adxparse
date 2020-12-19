@@ -17,7 +17,7 @@ package body Adx.App.Format.Dictionary is
 Cur_Directory:Unbounded_String;
 
 procedure InitCurrentDirectory is
-   Dir:String:=Ada.Directories.Current_Directory;
+   Dir:constant String:=Ada.Directories.Current_Directory;
 begin
 
    Cur_Directory:=To_Unbounded_String(Dir);
@@ -26,7 +26,7 @@ end InitCurrentDirectory;
 
 function GetDictionaryFilename return String is
 
-   File_Name:String:=To_String(Cur_Directory) & "/xxx.dic";
+   File_Name:constant String:=To_String(Cur_Directory) & "/xxx.dic";
 begin
 
    return File_Name;

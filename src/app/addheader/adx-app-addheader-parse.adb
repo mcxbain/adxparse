@@ -10,7 +10,6 @@
 with Ada.Text_IO;
 with Ada.Strings.Unbounded;
 with Adx.Lib.Vectortype;
-with Adx.Lib.Readdir;
 with Adx.Lib.Writefile;
 with Adx.Lib.Readfile;
 with Adx.App.AddHeader.Add;
@@ -44,8 +43,8 @@ end ParseVectorAds;
 ------------------------------------------------------------------------------
 procedure ParseRecordAds(My_Record:Directory_Record_Type) is
 
-   File_Path:String:=To_String(My_Record.File_Path);
-   File_Name:String:=To_String(My_Record.File_Name);
+   File_Path:constant String:=To_String(My_Record.File_Path);
+   File_Name:constant String:=To_String(My_Record.File_Name);
    File_Vector:String_Vector_Type;
    Result_Vector:String_Vector_Type;
 
@@ -89,8 +88,8 @@ end ParseVectorAdb;
 ------------------------------------------------------------------------------
 procedure ParseRecordAdb(My_Record:Directory_Record_Type) is
 
-   File_Path:String:=To_String(My_Record.File_Path);
-   File_Name:String:=To_String(My_Record.File_Name);
+   File_Path:constant String:=To_String(My_Record.File_Path);
+   File_Name:constant String:=To_String(My_Record.File_Name);
    File_Vector:String_Vector_Type;
    Result_Vector:String_Vector_Type;
 

@@ -7,15 +7,11 @@
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Ada.Text_IO;
-with Ada.Strings.Unbounded;
 with Adx.Lib.Replace;
 with Adx.Lib.Readdir;
 with Adx.Lib.Renamefile;
 with Adx.Lib.Stringmod;
 
-use Ada.Text_IO;
-use Ada.Strings.Unbounded;
 use Adx.Lib.Readdir;
 
 package body Adx.App.Rename.File is
@@ -67,8 +63,8 @@ procedure Rename(Dir_Path:String; Old_Name:String; New_Name:String; File_Type:St
    --New_Name_Lc:String:=Adx.Lib.Stringmod.String_To_Lower_All(New_Name);
    --Old_File_Name:String:=Adx.Lib.Replace.Replace(Old_Name_Lc, ".", "-") & File_Type;
    --New_File_Name:String:=Adx.Lib.Replace.Replace(New_Name_Lc, ".", "-") & File_Type;
-   Old_File_Name:String:=Adx.Lib.Stringmod.String_To_Lower_All(Old_Name) & File_Type;
-   New_File_Name:String:=Adx.Lib.Stringmod.String_To_Lower_All(New_Name) & File_Type;
+   Old_File_Name:constant String:=Adx.Lib.Stringmod.String_To_Lower_All(Old_Name) & File_Type;
+   New_File_Name:constant String:=Adx.Lib.Stringmod.String_To_Lower_All(New_Name) & File_Type;
 
    Old_File_Path:Unbounded_String;
    New_File_Path:Unbounded_String;

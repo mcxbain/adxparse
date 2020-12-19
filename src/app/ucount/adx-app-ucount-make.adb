@@ -9,17 +9,14 @@
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
 with Ada.Strings.Unbounded;
-with Adx.Lib.Vectortype;
 with Adx.Lib.Filelist;
 with Adx.Lib.Readdir;
 with Adx.Lib.Sort;
 with Adx.Lib.Replace;
-with Adx.Lib.Tokenize;
 with Adx.Lib.Stringmod;
 
 use Ada.Text_IO;
 use Ada.Strings.Unbounded;
-use Adx.Lib.Vectortype;
 use Adx.Lib.Readdir;
 
 package body Adx.App.Ucount.Make is

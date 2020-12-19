@@ -10,12 +10,10 @@
 with Ada.Strings.Unbounded;
 with Adx.Lib.Replace;
 with Adx.Lib.Tokenize;
-with Adx.Lib.Vectortype;
 with Adx.Lib.Stringmod;
 with Adx.Lib.Mkheader;
 
 use Ada.Strings.Unbounded;
-use Adx.Lib.Vectortype;
 
 package body Adx.App.AddHeader.Add is
 
@@ -24,7 +22,7 @@ function AddHeaderSpec(Content_Vector:String_Vector_Type; File_Name:String) retu
    My_String:Unbounded_String;
    Header_Vector:String_Vector_Type;
    Result_Vector:String_Vector_Type;
-   Delimiter:String:=(1 => ASCII.LF);
+   Delimiter:constant String:=(1 => ASCII.LF);
 
 begin
 
@@ -59,7 +57,7 @@ function AddHeaderBody(Content_Vector:String_Vector_Type; File_Name:String) retu
    My_String:Unbounded_String;
    Header_Vector:String_Vector_Type;
    Result_Vector:String_Vector_Type;
-   Delimiter:String:=(1 => ASCII.LF);
+   Delimiter:constant String:=(1 => ASCII.LF);
 
 begin
 

@@ -55,7 +55,7 @@ begin
          Checker:=True;
       end if;
 
-      if Checker = True then
+      if Checker then
 
          Adx.App.Rmheader.Make.MakeAll(Dir_Path);
          Adx.App.AddHeader.Make.MakeAll(Dir_Path);

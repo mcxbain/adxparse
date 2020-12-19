@@ -7,10 +7,7 @@
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Ada.Text_IO;
 with Adx.App.Rename.Make;
-
-use Ada.Text_IO;
 
 package body Adx.Run.Rename is
 

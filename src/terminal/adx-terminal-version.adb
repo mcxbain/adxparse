@@ -8,10 +8,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
-with Ada.Strings.Unbounded;
-
 use Ada.Text_IO;
-use Ada.Strings.Unbounded;
 
 package body Adx.Terminal.Version is
 

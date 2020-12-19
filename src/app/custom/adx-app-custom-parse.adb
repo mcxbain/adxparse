@@ -9,16 +9,12 @@
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
 with Ada.Strings.Unbounded;
-with Adx.Lib.Vectortype;
-with Adx.Lib.Readdir;
 with Adx.Lib.Readfile;
 with Adx.Lib.Writefile;
 with Adx.App.Custom.Transform;
 
 use Ada.Text_IO;
 use Ada.Strings.Unbounded;
-use Adx.Lib.Vectortype;
-use Adx.Lib.Readdir;
 
 package body Adx.App.Custom.Parse is
 
@@ -45,7 +41,7 @@ end ParseVector;
 ------------------------------------------------------------------------------
 procedure ParseRecord(My_Record:Directory_Record_Type) is
 
-   File_Path:String:=To_String(My_Record.File_Path);
+   File_Path:constant String:=To_String(My_Record.File_Path);
    File_Vector:String_Vector_Type;
    Result_Vector:String_Vector_Type;
 

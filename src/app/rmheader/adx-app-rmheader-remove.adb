@@ -45,7 +45,7 @@ begin
    if My_String'Length > 1 then
 
       declare
-         First_String:String:=My_String(My_String'First .. My_String'First + 1);
+         First_String:constant String:=My_String(My_String'First .. My_String'First + 1);
       begin
 
          if First_String = "--" then

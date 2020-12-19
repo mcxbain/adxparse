@@ -14,7 +14,6 @@ with Adx.Lib.Readfile;
 with Adx.Lib.Vectortype;
 with Adx.Lib.Replace;
 with Adx.Lib.Writefile;
-with Adx.Lib.Tokenize;
 with Adx.Lib.Stringmod;
 
 use Ada.Text_IO;
@@ -62,8 +61,8 @@ procedure Rename(Dir_Path:String; Old_Name:String; New_Name:String; File_Type:St
    My_Vector:Directory_Vector_Type;
    My_Record:Directory_Record_Type;
 
-   Old_Name_Mod:String:=Adx.Lib.Stringmod.String_To_Upper_First_Sep(Adx.Lib.Replace.Replace(Old_Name, "-", "."), ".");
-   New_Name_Mod:String:=Adx.Lib.Stringmod.String_To_Upper_First_Sep(Adx.Lib.Replace.Replace(New_Name, "-", "."), ".");
+   Old_Name_Mod:constant String:=Adx.Lib.Stringmod.String_To_Upper_First_Sep(Adx.Lib.Replace.Replace(Old_Name, "-", "."), ".");
+   New_Name_Mod:constant String:=Adx.Lib.Stringmod.String_To_Upper_First_Sep(Adx.Lib.Replace.Replace(New_Name, "-", "."), ".");
 
 begin
 

@@ -27,7 +27,7 @@ package body Adx.Terminal is
 ------------------------------------------------------------------------------
 procedure Main is
 
-   My_String:String:=Adx.Lib.Getparam.Get_Parameter_String;
+   My_String:constant String:=Adx.Lib.Getparam.Get_Parameter_String;
 
 begin
 

@@ -30,7 +30,7 @@ package body Adx.Run.File is
 
 function Getfiletype(File_Name:String) return String is
 
-   My_String:String:=Ada.Directories.Extension(File_Name);
+   My_String:constant String:=Ada.Directories.Extension(File_Name);
 
 begin
 
@@ -53,7 +53,7 @@ end Makedictionary;
 
 procedure Deletedictionary is
 
-   File_Name:String:=Adx.App.Format.Dictionary.GetDictionaryFilename;
+   File_Name:constant String:=Adx.App.Format.Dictionary.GetDictionaryFilename;
 begin
 
    --put_line("Delete dictionary file " &File_Name);
@@ -63,10 +63,10 @@ end Deletedictionary;
 
 procedure Main(File_Path:String) is
 
-   File_Name:String:=Ada.Directories.Simple_Name(File_Path);
-   File_Type:String:=Getfiletype(File_Name);
-   My_Record:Directory_Record_Type:=(To_Unbounded_String(File_Name), To_Unbounded_String(File_Path));
-   Dictionary_String:String_Vector_Type:=Adx.App.Format.Dictionary.GetAdxLib;
+   File_Name:constant String:=Ada.Directories.Simple_Name(File_Path);
+   File_Type:constant String:=Getfiletype(File_Name);
+   My_Record:constant Directory_Record_Type:=(To_Unbounded_String(File_Name), To_Unbounded_String(File_Path));
+   Dictionary_String:constant String_Vector_Type:=Adx.App.Format.Dictionary.GetAdxLib;
 
 begin
 
