@@ -1,28 +1,28 @@
 # Adxparse
 
 ```bash
-Line metrics summed over 122 units
-  all lines            : 5397
-  code lines           : 2327
-  comment lines        : 1525
-  end-of-line comments : 15
-  comment percentage   : 39.97
-  blank lines          : 1545
+Line metrics summed over 109 units
+  all lines            : 4496
+  code lines           : 1932
+  comment lines        : 1406
+  end-of-line comments : 1
+  comment percentage   : 42.15
+  blank lines          : 1158
 
-Average lines in body: 10.73
+Average lines in body: 11.04
 
-Element metrics summed over 122 units
-  all statements      : 675
-  all declarations    : 1094
-  logical SLOC        : 1769
+Element metrics summed over 109 units
+  all statements      : 570
+  all declarations    : 837
+  logical SLOC        : 1407
 
- 6 public types in 3 units
+ 1 public types in 1 units
 
- 9 type declarations in 6 units
+ 1 type declarations in 1 units
 
- 138 public subprograms in 55 units
+ 107 public subprograms in 49 units
 
- 146 subprogram bodies in 55 units
+ 115 subprogram bodies in 50 units
 
-Average cyclomatic complexity: 1.86
+Average cyclomatic complexity: 2.03
 ```
