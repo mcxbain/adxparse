@@ -1,14 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                               ADX.RUN.DIR                                --
+--                           ADX.TERMINAL.VERSION                           --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-package Adx.Run.Dir is
+package Adx.Terminal.Version is
 
-procedure Main(Dir_Path:String; Dic_Name:String);
+procedure Main;
 
-end Adx.Run.Dir;
+end Adx.Terminal.Version;

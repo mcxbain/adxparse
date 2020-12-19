@@ -1,22 +1,29 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                              ADX.RUN.METRIC                              --
+--                           ADX.TERMINAL.VERSION                           --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
 --                                 B o d y                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Adx.App.Metric.Make;
+with Ada.Text_IO;
+with Ada.Strings.Unbounded;
 
-package body Adx.Run.Metric is
+use Ada.Text_IO;
+use Ada.Strings.Unbounded;
 
-procedure Main(Project_File:String) is
+package body Adx.Terminal.Version is
+
+------------------------------------------------------------------------------
+-- Version
+------------------------------------------------------------------------------
+procedure Main is
 
 begin
 
-   Adx.App.Metric.Make.MakeAll(Project_File);
+   Put_Line("7.2.1");
 
 end Main;
 
-end Adx.Run.Metric;
+end Adx.Terminal.Version;

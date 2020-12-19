@@ -21,7 +21,6 @@ with Adx.App.Format.Parse;
 with Adx.App.Custom.Parse;
 with Adx.App.Format.Dictionary;
 
-
 use Ada.Text_IO;
 use Ada.Strings.Unbounded;
 use Adx.Lib.Readdir;

@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                               ADX.RUN.DIR                                --
+--                              ADX.RUN.PARSE                               --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
@@ -20,7 +20,7 @@ with Adx.App.Custom.Make;
 use Ada.Text_IO;
 use Adx.Lib.Vectortype;
 
-package body Adx.Run.Dir is
+package body Adx.Run.Parse is
 
 procedure Main(Dir_Path:String; Dic_Name:String) is
 
@@ -74,4 +74,4 @@ begin
 
 end Main;
 
-end Adx.Run.Dir;
+end Adx.Run.Parse;

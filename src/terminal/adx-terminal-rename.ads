@@ -1,22 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                              ADX.RUN.METRIC                              --
+--                           ADX.TERMINAL.RENAME                            --
 --                                                                          --
 --                                  A D A                                   --
 --                                                                          --
---                                 B o d y                                  --
+--                                 S p e c                                  --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Adx.App.Metric.Make;
+package Adx.Terminal.Rename is
 
-package body Adx.Run.Metric is
+procedure Main(My_String:String);
 
-procedure Main(Project_File:String) is
-
-begin
-
-   Adx.App.Metric.Make.MakeAll(Project_File);
-
-end Main;
-
-end Adx.Run.Metric;
+end Adx.Terminal.Rename;
