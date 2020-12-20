@@ -22,7 +22,7 @@ use Adx.Lib.Vectortype;
 
 package body Adx.Run.Parse is
 
-procedure Main(Dir_Path:String; Dic_Name:String) is
+procedure Main(Dir_Path:String; Dic_Name:String; Format_Option:String) is
 
    Dictionary_String:String_Vector_Type;
    Checker:Boolean:=False;
@@ -60,7 +60,7 @@ begin
          Adx.App.Rmheader.Make.MakeAll(Dir_Path);
          Adx.App.AddHeader.Make.MakeAll(Dir_Path);
          Adx.App.Format.Make.MakeAll(Dir_Path, Dictionary_String);
-         Adx.App.Custom.Make.MakeAll(Dir_Path);
+         Adx.App.Custom.Make.MakeAll(Dir_Path, Format_Option);
 
       else
          Put_Line("Directory not allowed..");

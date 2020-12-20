@@ -23,12 +23,34 @@ package body Adx.Terminal.File is
 procedure Main(My_String:String) is
 
    File_Path:Unbounded_String;
+   Dic_Name:Unbounded_String;
+   Format_Option:Unbounded_String;
 
 begin
 
+   -- Find Path
    if Adx.Lib.Regmatch.Regmatch(My_String, "-f\s(.*?)\s", File_Path) then
 
-      Adx.Run.File.Main(To_String(File_Path));
+      -- Find Dictionary
+      if Adx.Lib.Regmatch.Regmatch(My_String, "-f\s.*?\s-c\s(.*?)\s", Dic_Name) then
+
+         -- Find Option
+         if Adx.Lib.Regmatch.Regmatch(My_String, "-f\s.*?\s-c\s.*?\s-o\s(.*?)\s", Format_Option) then
+
+            --OK RUN
+            Adx.Run.File.Main(To_String(File_Path), To_String(Dic_Name), To_String(Format_Option));
+
+         else
+
+            Put_Line("Format Option missing..");
+
+         end if;
+
+      else
+
+         Put_Line("Dictionary Name missing..");
+
+      end if;
 
    else
 

@@ -24,6 +24,7 @@ procedure Main(My_String:String) is
 
    Dir_Path:Unbounded_String;
    Dic_Name:Unbounded_String;
+   Format_Option:Unbounded_String;
 
 begin
 
@@ -32,8 +33,18 @@ begin
       -- Find Dictionary
       if Adx.Lib.Regmatch.Regmatch(My_String, "-d\s.*?\s-c\s(.*?)\s", Dic_Name) then
 
-         --OK
-         Adx.Run.Parse.Main(To_String(Dir_Path), To_String(Dic_Name));
+         -- Find Option
+         if Adx.Lib.Regmatch.Regmatch(My_String, "-d\s.*?\s-c\s.*?\s-o\s(.*?)\s", Format_Option) then
+
+            --OK ..removespace
+            Put_Line(To_String(Format_Option));
+            Adx.Run.Parse.Main(To_String(Dir_Path), To_String(Dic_Name), To_String(Format_Option));
+
+         else
+
+            Put_Line("Format Option missing..");
+
+         end if;
 
       else
 
