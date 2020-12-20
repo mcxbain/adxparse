@@ -13,6 +13,6 @@ procedure Main is
 
 begin
 
-   Adx.Terminal.Main;
+Adx.Terminal.Main;
 
 end Main;

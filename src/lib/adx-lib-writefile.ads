@@ -12,6 +12,6 @@ use Adx.Lib.Vectortype;
 
 package Adx.Lib.Writefile is
 
-   procedure Writefile(File_Name:String; My_Vector:String_Vector_Type);
+procedure Writefile(File_Name:String; My_Vector:String_Vector_Type);
 
 end Adx.Lib.Writefile;

@@ -17,80 +17,80 @@ package body Adx.App.Custom.Transform is
 ------------------------------------------------------------------------------
 -- Transform Line Space
 ------------------------------------------------------------------------------
-   function TransformLineSpace(My_String:String) return String is
+function TransformLineSpace(My_String:String) return String is
 
-      Result:Unbounded_String:=To_Unbounded_String(My_String);
+   Result:Unbounded_String:=To_Unbounded_String(My_String);
 
-   begin
+begin
 
-      if My_String'Length > 3 then
+   if My_String'Length > 3 then
 
-         declare
-            Substr:constant String:=My_String(My_String'First .. My_String'First + 2);
+      declare
+         Substr:constant String:=My_String(My_String'First .. My_String'First + 2);
 
-         begin
+      begin
 
-            if Substr = "   " then
+         if Substr = "   " then
 
-               -- put_line("has line space");
-               Result:=To_Unbounded_String(My_String(My_String'First + 3 .. My_String'Last));
+            -- put_line("has line space");
+            Result:=To_Unbounded_String(My_String(My_String'First + 3 .. My_String'Last));
 
-            end if;
+         end if;
 
-         end;
+      end;
 
-      end if;
+   end if;
 
-      return To_String(Result);
+   return To_String(Result);
 
-   end TransformLineSpace;
+end TransformLineSpace;
 
 ------------------------------------------------------------------------------
 -- Transform Brackets
 ------------------------------------------------------------------------------
-   function TransformBrackets(My_String:String) return String is
+function TransformBrackets(My_String:String) return String is
 
-      Result:Unbounded_String;
-      Before:constant String:=" " & "(";
-      After:constant String:="(";
+   Result:Unbounded_String;
+   Before:constant String:=" " & "(";
+   After:constant String:="(";
 
-   begin
+begin
 
-      Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
-      return To_String(Result);
+   Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
+   return To_String(Result);
 
-   end TransformBrackets;
+end TransformBrackets;
 
 ------------------------------------------------------------------------------
 -- Transform Colon
 ------------------------------------------------------------------------------
-   function TransformColon(My_String:String) return String is
+function TransformColon(My_String:String) return String is
 
-      Result:Unbounded_String;
-      Before:constant String:=":" & " ";
-      After:constant String:=":";
+   Result:Unbounded_String;
+   Before:constant String:=":" & " ";
+   After:constant String:=":";
 
-   begin
+begin
 
-      Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
-      return To_String(Result);
+   Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
+   return To_String(Result);
 
-   end TransformColon;
+end TransformColon;
 
 ------------------------------------------------------------------------------
 -- Transform Colon Equal
 ------------------------------------------------------------------------------
-   function TransformColonEqual(My_String:String) return String is
+function TransformColonEqual(My_String:String) return String is
 
-      Result:Unbounded_String;
-      Before:constant String:=" " & ":= ";
-      After:constant String:=":=";
+   Result:Unbounded_String;
+   Before:constant String:=" " & ":= ";
+   After:constant String:=":=";
 
-   begin
+begin
 
-      Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
-      return To_String(Result);
+   Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
+   return To_String(Result);
 
-   end TransformColonEqual;
+end TransformColonEqual;
 
 end Adx.App.Custom.Transform;

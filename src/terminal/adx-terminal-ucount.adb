@@ -20,22 +20,22 @@ package body Adx.Terminal.Ucount is
 ------------------------------------------------------------------------------
 -- Ucount
 ------------------------------------------------------------------------------
-   procedure Main(My_String:String) is
+procedure Main(My_String:String) is
 
-      Dir_Path:Unbounded_String;
+   Dir_Path:Unbounded_String;
 
-   begin
+begin
 
-      if Adx.Lib.Regmatch.Regmatch(My_String, "-l\s(.*?)\s", Dir_Path) then
+   if Adx.Lib.Regmatch.Regmatch(My_String, "-l\s(.*?)\s", Dir_Path) then
 
-         Adx.Run.Ucount.Main(To_String(Dir_Path));
+      Adx.Run.Ucount.Main(To_String(Dir_Path));
 
-      else
+   else
 
-         Put_Line("Directory missing..");
+      Put_Line("Directory missing..");
 
-      end if;
+   end if;
 
-   end Main;
+end Main;
 
 end Adx.Terminal.Ucount;

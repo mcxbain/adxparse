@@ -12,6 +12,6 @@ use Adx.Lib.Vectortype;
 
 package Adx.Lib.Tokenize is
 
-   function Tokenize(Source_String:in String; Pattern_String:in String) return String_Vector_Type;
+function Tokenize(Source_String:in String; Pattern_String:in String) return String_Vector_Type;
 
 end Adx.Lib.Tokenize;

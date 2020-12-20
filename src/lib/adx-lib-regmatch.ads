@@ -12,6 +12,6 @@ use Ada.Strings.Unbounded;
 
 package Adx.Lib.Regmatch is
 
-   function Regmatch(Content:in String; Pattern:in String; Result:out Unbounded_String) return Boolean;
+function Regmatch(Content:in String; Pattern:in String; Result:out Unbounded_String) return Boolean;
 
 end Adx.Lib.Regmatch;

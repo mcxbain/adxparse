@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Terminal.Help is
 
-   procedure Main;
+procedure Main;
 
 end Adx.Terminal.Help;

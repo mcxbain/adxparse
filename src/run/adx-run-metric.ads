@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Run.Metric is
 
-   procedure Main(Project_File:String);
+procedure Main(Project_File:String);
 
 end Adx.Run.Metric;

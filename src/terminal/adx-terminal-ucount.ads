@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Terminal.Ucount is
 
-   procedure Main(My_String:String);
+procedure Main(My_String:String);
 
 end Adx.Terminal.Ucount;

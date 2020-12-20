@@ -15,32 +15,32 @@ package body Adx.Lib.Readfile is
 ------------------------------------------------------------------------------
 -- Read File
 ------------------------------------------------------------------------------
-   function Readfile(File_Name:String) return String_Vector_Type is
+function Readfile(File_Name:String) return String_Vector_Type is
 
-      My_File:File_Type;
-      My_Vector:String_Vector_Type;
+   My_File:File_Type;
+   My_Vector:String_Vector_Type;
 
-   begin
+begin
 
-      Open(File => My_File, Mode => In_File, Name => File_Name);
+   Open(File => My_File, Mode => In_File, Name => File_Name);
 
-      loop
+   loop
 
-         exit when End_Of_File(My_File);
+      exit when End_Of_File(My_File);
 
-         declare
-            Line:constant String:=Get_Line(My_File);
-         begin
-            -- add the contents of Line
-            My_Vector.Append(Line);
-         end;
+      declare
+         Line:constant String:=Get_Line(My_File);
+      begin
+         -- add the contents of Line
+         My_Vector.Append(Line);
+      end;
 
-      end loop;
+   end loop;
 
-      Close(My_File);
+   Close(My_File);
 
-      return My_Vector;
+   return My_Vector;
 
-   end Readfile;
+end Readfile;
 
 end Adx.Lib.Readfile;

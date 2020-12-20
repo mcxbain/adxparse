@@ -28,87 +28,87 @@ use Adx.Lib.Vectortype;
 
 package body Adx.Run.File is
 
-   function Getfiletype(File_Name:String) return String is
+function Getfiletype(File_Name:String) return String is
 
-      My_String:constant String:=Ada.Directories.Extension(File_Name);
+   My_String:constant String:=Ada.Directories.Extension(File_Name);
 
-   begin
+begin
 
-      return My_String;
+   return My_String;
 
-   end Getfiletype;
+end Getfiletype;
 
-   procedure Makedictionary(Dictionary_String:String_Vector_Type) is
+procedure Makedictionary(Dictionary_String:String_Vector_Type) is
 
-      File_Name:Unbounded_String;
-   begin
+   File_Name:Unbounded_String;
+begin
 
-      Adx.App.Format.Dictionary.InitCurrentDirectory;
-      File_Name:=To_Unbounded_String(Adx.App.Format.Dictionary.GetDictionaryFilename);
+   Adx.App.Format.Dictionary.InitCurrentDirectory;
+   File_Name:=To_Unbounded_String(Adx.App.Format.Dictionary.GetDictionaryFilename);
 
-      --put_line("Create dictionary file "&To_String(File_Name));
-      Adx.Lib.Writefile.Writefile(To_String(File_Name), Dictionary_String);
+   --put_line("Create dictionary file "&To_String(File_Name));
+   Adx.Lib.Writefile.Writefile(To_String(File_Name), Dictionary_String);
 
-   end Makedictionary;
+end Makedictionary;
 
-   procedure Deletedictionary is
+procedure Deletedictionary is
 
-      File_Name:constant String:=Adx.App.Format.Dictionary.GetDictionaryFilename;
-   begin
+   File_Name:constant String:=Adx.App.Format.Dictionary.GetDictionaryFilename;
+begin
 
-      --put_line("Delete dictionary file " &File_Name);
-      Adx.Lib.Deletefile.Deletefile(File_Name);
+   --put_line("Delete dictionary file " &File_Name);
+   Adx.Lib.Deletefile.Deletefile(File_Name);
 
-   end Deletedictionary;
+end Deletedictionary;
 
-   procedure Main(File_Path:String; Dic_Name:String; Format_Option:String) is
+procedure Main(File_Path:String; Dic_Name:String; Format_Option:String) is
 
-      File_Name:constant String:=Ada.Directories.Simple_Name(File_Path);
-      File_Type:constant String:=Getfiletype(File_Name);
-      My_Record:constant Directory_Record_Type:=(To_Unbounded_String(File_Name), To_Unbounded_String(File_Path));
-      Dictionary_String:String_Vector_Type;
+   File_Name:constant String:=Ada.Directories.Simple_Name(File_Path);
+   File_Type:constant String:=Getfiletype(File_Name);
+   My_Record:constant Directory_Record_Type:=(To_Unbounded_String(File_Name), To_Unbounded_String(File_Path));
+   Dictionary_String:String_Vector_Type;
 
-   begin
+begin
 
-      if Dic_Name = "adxlib" then
-         Dictionary_String:=Adx.App.Format.Dictionary.GetAdxLib;
-      elsif Dic_Name = "adxparse" then
-         Dictionary_String:=Adx.App.Format.Dictionary.GetAdxParse;
-      end if;
+   if Dic_Name = "adxlib" then
+      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxLib;
+   elsif Dic_Name = "adxparse" then
+      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxParse;
+   end if;
 
-      --check if File exists;
-      if Adx.Lib.Filecheck.Filecheck(File_Path) then
+   --check if File exists;
+   if Adx.Lib.Filecheck.Filecheck(File_Path) then
 
-         --make dic file
-         Makedictionary(Dictionary_String);
+      --make dic file
+      Makedictionary(Dictionary_String);
 
-         if File_Type = "ads" then
+      if File_Type = "ads" then
 
-            Put_Line("File is ADS ..");
-            Adx.App.Rmheader.Parse.ParseRecordAds(My_Record);
-            Adx.App.AddHeader.Parse.ParseRecordAds(My_Record);
-            Adx.App.Format.Parse.ParseRecord(My_Record);
-            Adx.App.Custom.Parse.ParseRecord(My_Record, Format_Option);
+         Put_Line("File is ADS ..");
+         Adx.App.Rmheader.Parse.ParseRecordAds(My_Record);
+         Adx.App.AddHeader.Parse.ParseRecordAds(My_Record);
+         Adx.App.Format.Parse.ParseRecord(My_Record);
+         Adx.App.Custom.Parse.ParseRecord(My_Record, Format_Option);
 
-         elsif File_Type = "adb" then
+      elsif File_Type = "adb" then
 
-            Put_Line("File is ADB ..");
-            Adx.App.Rmheader.Parse.ParseRecordAdb(My_Record);
-            Adx.App.AddHeader.Parse.ParseRecordAdb(My_Record);
-            Adx.App.Format.Parse.ParseRecord(My_Record);
-            Adx.App.Custom.Parse.ParseRecord(My_Record, Format_Option);
-
-         end if;
-
-         --delete dic file
-         Deletedictionary;
-
-      else
-
-         Put_Line("File dosent exist..");
+         Put_Line("File is ADB ..");
+         Adx.App.Rmheader.Parse.ParseRecordAdb(My_Record);
+         Adx.App.AddHeader.Parse.ParseRecordAdb(My_Record);
+         Adx.App.Format.Parse.ParseRecord(My_Record);
+         Adx.App.Custom.Parse.ParseRecord(My_Record, Format_Option);
 
       end if;
 
-   end Main;
+      --delete dic file
+      Deletedictionary;
+
+   else
+
+      Put_Line("File dosent exist..");
+
+   end if;
+
+end Main;
 
 end Adx.Run.File;

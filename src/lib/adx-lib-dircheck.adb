@@ -15,26 +15,26 @@ package body Adx.Lib.Dircheck is
 ------------------------------------------------------------------------------
 -- Dir Check
 ------------------------------------------------------------------------------
-   function Dircheck(Dir_Path:String) return Boolean is
+function Dircheck(Dir_Path:String) return Boolean is
 
-      Has_Dir:Boolean;
+   Has_Dir:Boolean;
 
-   begin
+begin
 
-      if Exists(Dir_Path) then
+   if Exists(Dir_Path) then
 
-         if Kind(Dir_Path) = Directory then
-            Has_Dir:=True;
-         else
-            Has_Dir:=False;
-         end if;
-
+      if Kind(Dir_Path) = Directory then
+         Has_Dir:=True;
       else
          Has_Dir:=False;
       end if;
 
-      return Has_Dir;
+   else
+      Has_Dir:=False;
+   end if;
 
-   end Dircheck;
+   return Has_Dir;
+
+end Dircheck;
 
 end Adx.Lib.Dircheck;

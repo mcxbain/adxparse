@@ -15,26 +15,26 @@ package body Adx.Lib.Filecheck is
 ------------------------------------------------------------------------------
 -- File Check
 ------------------------------------------------------------------------------
-   function Filecheck(File_Path:String) return Boolean is
+function Filecheck(File_Path:String) return Boolean is
 
-      Has_File:Boolean;
+   Has_File:Boolean;
 
-   begin
+begin
 
-      if Exists(File_Path) then
+   if Exists(File_Path) then
 
-         if Kind(File_Path) = Ordinary_File then
-            Has_File:=True;
-         else
-            Has_File:=False;
-         end if;
-
+      if Kind(File_Path) = Ordinary_File then
+         Has_File:=True;
       else
          Has_File:=False;
       end if;
 
-      return Has_File;
+   else
+      Has_File:=False;
+   end if;
 
-   end Filecheck;
+   return Has_File;
+
+end Filecheck;
 
 end Adx.Lib.Filecheck;

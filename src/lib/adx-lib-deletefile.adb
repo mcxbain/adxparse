@@ -14,12 +14,12 @@ package body Adx.Lib.Deletefile is
 ------------------------------------------------------------------------------
 -- Delete File
 ------------------------------------------------------------------------------
-   procedure Deletefile(File_Name:String) is
+procedure Deletefile(File_Name:String) is
 
-   begin
+begin
 
-      Ada.Directories.Delete_File(File_Name);
+   Ada.Directories.Delete_File(File_Name);
 
-   end Deletefile;
+end Deletefile;
 
 end Adx.Lib.Deletefile;

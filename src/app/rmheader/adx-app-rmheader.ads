@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.App.Rmheader is
 
-   pragma Pure;
+pragma Pure;
 
 end Adx.App.Rmheader;

@@ -15,12 +15,12 @@ package body Adx.Terminal.Version is
 ------------------------------------------------------------------------------
 -- Version
 ------------------------------------------------------------------------------
-   procedure Main is
+procedure Main is
 
-   begin
+begin
 
-      Put_Line("7.2.1");
+   Put_Line("7.2.1");
 
-   end Main;
+end Main;
 
 end Adx.Terminal.Version;

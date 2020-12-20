@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.App.Metric.Make is
 
-   procedure MakeAll(Project_File:String);
+procedure MakeAll(Project_File:String);
 
 end Adx.App.Metric.Make;

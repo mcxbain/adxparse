@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.App.Ucount is
 
-   pragma Pure;
+pragma Pure;
 
 end Adx.App.Ucount;
