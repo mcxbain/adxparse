@@ -11,12 +11,12 @@ with Adx.App.Ucount.Make;
 
 package body Adx.Run.Ucount is
 
-procedure Main(Dir_Path:String) is
+   procedure Main(Dir_Path:String) is
 
-begin
+   begin
 
-   Adx.App.Ucount.Make.MakeAll(Dir_Path);
+      Adx.App.Ucount.Make.MakeAll(Dir_Path);
 
-end Main;
+   end Main;
 
 end Adx.Run.Ucount;

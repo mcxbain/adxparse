@@ -12,9 +12,9 @@ use Adx.Lib.Vectortype;
 
 package Adx.App.Rmheader.Remove is
 
-function RemoveHeader(My_Vector:String_Vector_Type) return String_Vector_Type;
-function CheckLineBeginsWithHifen(My_String:String) return Boolean;
-function CheckFirstLineHasHifen(My_Vector:String_Vector_Type) return Boolean;
-function RemoveHifen(My_Vector:String_Vector_Type) return String_Vector_Type;
+   function RemoveHeader(My_Vector:String_Vector_Type) return String_Vector_Type;
+   function CheckLineBeginsWithHifen(My_String:String) return Boolean;
+   function CheckFirstLineHasHifen(My_Vector:String_Vector_Type) return Boolean;
+   function RemoveHifen(My_Vector:String_Vector_Type) return String_Vector_Type;
 
 end Adx.App.Rmheader.Remove;

@@ -18,47 +18,47 @@ package body Adx.Lib.Getparam is
 ------------------------------------------------------------------------------
 -- Get Parameter List
 ------------------------------------------------------------------------------
-function Get_Parameter_List return String_Vector_Type is
+   function Get_Parameter_List return String_Vector_Type is
 
-   My_Vector:String_Vector_Type;
+      My_Vector:String_Vector_Type;
 
-begin
+   begin
 
-   for K in 1 .. Argument_Count loop
-      My_Vector.Append(Argument(K));
-   end loop;
+      for K in 1 .. Argument_Count loop
+         My_Vector.Append(Argument(K));
+      end loop;
 
-   return My_Vector;
+      return My_Vector;
 
-end Get_Parameter_List;
+   end Get_Parameter_List;
 
 ------------------------------------------------------------------------------
 -- Get Parameter String
 ------------------------------------------------------------------------------
-function Get_Parameter_String return String is
+   function Get_Parameter_String return String is
 
-   My_Vector:constant String_Vector_Type:=Get_Parameter_List;
-   My_String:Unbounded_String;
+      My_Vector:constant String_Vector_Type:=Get_Parameter_List;
+      My_String:Unbounded_String;
 
-begin
+   begin
 
-   for I in My_Vector.First_Index .. My_Vector.Last_Index loop
+      for I in My_Vector.First_Index .. My_Vector.Last_Index loop
 
-      Append(My_String, My_Vector.Element(Index => I));
+         Append(My_String, My_Vector.Element(Index => I));
 
-      if I < My_Vector.Last_Index then
+         if I < My_Vector.Last_Index then
 
-         Append(My_String, " ");
+            Append(My_String, " ");
 
-      else
+         else
 
-         Append(My_String, ASCII.LF);
-      end if;
+            Append(My_String, ASCII.LF);
+         end if;
 
-   end loop;
+      end loop;
 
-   return To_String(My_String);
+      return To_String(My_String);
 
-end Get_Parameter_String;
+   end Get_Parameter_String;
 
 end Adx.Lib.Getparam;

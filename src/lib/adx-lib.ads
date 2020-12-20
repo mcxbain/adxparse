@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Lib is
 
-pragma Pure;
+   pragma Pure;
 
 end Adx.Lib;

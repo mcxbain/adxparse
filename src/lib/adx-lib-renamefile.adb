@@ -11,12 +11,12 @@ with Ada.Directories;
 
 package body Adx.Lib.Renamefile is
 
-procedure Renamefile(Old_Name:String; New_Name:String) is
+   procedure Renamefile(Old_Name:String; New_Name:String) is
 
-begin
+   begin
 
-   Ada.Directories.Rename(Old_Name, New_Name);
+      Ada.Directories.Rename(Old_Name, New_Name);
 
-end Renamefile;
+   end Renamefile;
 
 end Adx.Lib.Renamefile;

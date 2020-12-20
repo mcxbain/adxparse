@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Run is
 
-pragma Pure;
+   pragma Pure;
 
 end Adx.Run;

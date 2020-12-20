@@ -12,7 +12,7 @@ use Adx.Lib.Vectortype;
 
 package Adx.App.Ucount.Make is
 
-procedure MakeAll(Dir_Path:String);
-procedure MakeExtend(My_Vector:String_Vector_Type);
+   procedure MakeAll(Dir_Path:String);
+   procedure MakeExtend(My_Vector:String_Vector_Type);
 
 end Adx.App.Ucount.Make;

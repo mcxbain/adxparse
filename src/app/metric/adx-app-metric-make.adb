@@ -19,18 +19,18 @@ package body Adx.App.Metric.Make is
 ------------------------------------------------------------------------------
 -- Make All
 ------------------------------------------------------------------------------
-procedure MakeAll(Project_File:String) is
+   procedure MakeAll(Project_File:String) is
 
-   Result:Unbounded_String;
+      Result:Unbounded_String;
 
-begin
+   begin
 
-   Put_Line("Run Gnatmetric");
+      Put_Line("Run Gnatmetric");
 
-   Result:=Adx.Lib.Sysout.Sysout("gnatmetric --complexity-all --syntax-all --lines-all -P " & Project_File);
+      Result:=Adx.Lib.Sysout.Sysout("gnatmetric --complexity-all --syntax-all --lines-all -P " & Project_File);
 
-   Put_Line(To_String(Result));
+      Put_Line(To_String(Result));
 
-end MakeAll;
+   end MakeAll;
 
 end Adx.App.Metric.Make;

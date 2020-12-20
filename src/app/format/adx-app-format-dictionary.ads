@@ -12,9 +12,9 @@ use Adx.Lib.Vectortype;
 
 package Adx.App.Format.Dictionary is
 
-procedure InitCurrentDirectory;
-function GetDictionaryFilename return String;
-function GetAdxLib return String_Vector_Type;
-function GetAdxParse return String_Vector_Type;
+   procedure InitCurrentDirectory;
+   function GetDictionaryFilename return String;
+   function GetAdxLib return String_Vector_Type;
+   function GetAdxParse return String_Vector_Type;
 
 end Adx.App.Format.Dictionary;

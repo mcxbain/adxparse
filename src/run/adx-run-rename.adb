@@ -11,12 +11,12 @@ with Adx.App.Rename.Make;
 
 package body Adx.Run.Rename is
 
-procedure Main(Dir_Path:String; Old_Name:String; New_Name:String) is
+   procedure Main(Dir_Path:String; Old_Name:String; New_Name:String) is
 
-begin
+   begin
 
-   Adx.App.Rename.Make.MakeAll(Dir_Path, Old_Name, New_Name);
+      Adx.App.Rename.Make.MakeAll(Dir_Path, Old_Name, New_Name);
 
-end Main;
+   end Main;
 
 end Adx.Run.Rename;

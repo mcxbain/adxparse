@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Lib.Dircheck is
 
-function Dircheck(Dir_Path:String) return Boolean;
+   function Dircheck(Dir_Path:String) return Boolean;
 
 end Adx.Lib.Dircheck;

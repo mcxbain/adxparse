@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Terminal.Metric is
 
-procedure Main(My_String:String);
+   procedure Main(My_String:String);
 
 end Adx.Terminal.Metric;

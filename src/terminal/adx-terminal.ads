@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Terminal is
 
-procedure Main;
+   procedure Main;
 
 end Adx.Terminal;

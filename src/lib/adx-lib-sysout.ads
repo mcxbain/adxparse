@@ -12,6 +12,6 @@ use Ada.Strings.Unbounded;
 
 package Adx.Lib.Sysout is
 
-function Sysout(Command:String) return Unbounded_String;
+   function Sysout(Command:String) return Unbounded_String;
 
 end Adx.Lib.Sysout;

@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Run.Rename is
 
-procedure Main(Dir_Path:String; Old_Name:String; New_Name:String);
+   procedure Main(Dir_Path:String; Old_Name:String; New_Name:String);
 
 end Adx.Run.Rename;

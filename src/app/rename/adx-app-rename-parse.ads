@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.App.Rename.Parse is
 
-procedure Rename(Dir_Path:String; Old_Name:String; New_Name:String; File_Type:String);
+   procedure Rename(Dir_Path:String; Old_Name:String; New_Name:String; File_Type:String);
 
 end Adx.App.Rename.Parse;

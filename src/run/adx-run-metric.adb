@@ -11,12 +11,12 @@ with Adx.App.Metric.Make;
 
 package body Adx.Run.Metric is
 
-procedure Main(Project_File:String) is
+   procedure Main(Project_File:String) is
 
-begin
+   begin
 
-   Adx.App.Metric.Make.MakeAll(Project_File);
+      Adx.App.Metric.Make.MakeAll(Project_File);
 
-end Main;
+   end Main;
 
 end Adx.Run.Metric;

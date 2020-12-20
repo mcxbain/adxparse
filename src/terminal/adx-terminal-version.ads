@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Terminal.Version is
 
-procedure Main;
+   procedure Main;
 
 end Adx.Terminal.Version;

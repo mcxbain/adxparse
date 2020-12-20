@@ -15,84 +15,84 @@ package body Adx.Lib.Mkheader is
 ------------------------------------------------------------------------------
 -- Make Header Adb
 ------------------------------------------------------------------------------
-function Make_Header_Adb(My_String:String) return String is
+   function Make_Header_Adb(My_String:String) return String is
 
-   Line:constant String:=Make_Line(My_String);
-   Result:Unbounded_String;
+      Line:constant String:=Make_Line(My_String);
+      Result:Unbounded_String;
 
-begin
+   begin
 
-   Append(Result, "------------------------------------------------------------------------------" & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, Line & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, "--                                  A D A                                   --" & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, "--                                 B o d y                                  --" & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, "------------------------------------------------------------------------------");
+      Append(Result, "------------------------------------------------------------------------------" & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, Line & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, "--                                  A D A                                   --" & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, "--                                 B o d y                                  --" & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, "------------------------------------------------------------------------------");
 
-   return To_String(Result);
+      return To_String(Result);
 
-end Make_Header_Adb;
+   end Make_Header_Adb;
 
 ------------------------------------------------------------------------------
 -- Make Header Ads
 ------------------------------------------------------------------------------
-function Make_Header_Ads(My_String:String) return String is
+   function Make_Header_Ads(My_String:String) return String is
 
-   Line:constant String:=Make_Line(My_String);
-   Result:Unbounded_String;
+      Line:constant String:=Make_Line(My_String);
+      Result:Unbounded_String;
 
-begin
+   begin
 
-   Append(Result, "------------------------------------------------------------------------------" & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, Line & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, "--                                  A D A                                   --" & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, "--                                 S p e c                                  --" & ASCII.LF);
-   Append(Result, "--                                                                          --" & ASCII.LF);
-   Append(Result, "------------------------------------------------------------------------------");
+      Append(Result, "------------------------------------------------------------------------------" & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, Line & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, "--                                  A D A                                   --" & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, "--                                 S p e c                                  --" & ASCII.LF);
+      Append(Result, "--                                                                          --" & ASCII.LF);
+      Append(Result, "------------------------------------------------------------------------------");
 
-   return To_String(Result);
+      return To_String(Result);
 
-end Make_Header_Ads;
+   end Make_Header_Ads;
 
 ------------------------------------------------------------------------------
 -- Make Line
 ------------------------------------------------------------------------------
-function Make_Line(My_String:String) return String is
+   function Make_Line(My_String:String) return String is
 
-   Modcalc:constant Integer:=My_String'Length mod 2;
-   A:constant Integer:=74 - (My_String'Length); -- 76 because 80-4 Line lenght 80
+      Modcalc:constant Integer:=My_String'Length mod 2;
+      A:constant Integer:=74 - (My_String'Length); -- 76 because 80-4 Line lenght 80
 
-   B:constant Integer:=2;
-   Lencalc:constant Integer:=(A / B);
+      B:constant Integer:=2;
+      Lencalc:constant Integer:=(A / B);
 
-   Result:Unbounded_String;
+      Result:Unbounded_String;
 
-begin
+   begin
 
-   Append(Result, "--");
+      Append(Result, "--");
 
-   for I in Integer range 1 .. Lencalc loop
+      for I in Integer range 1 .. Lencalc loop
 
-      Append(Result, " ");
-   end loop;
+         Append(Result, " ");
+      end loop;
 
-   Append(Result, My_String);
+      Append(Result, My_String);
 
-   for I in Integer range 1 .. Lencalc + Modcalc loop
+      for I in Integer range 1 .. Lencalc + Modcalc loop
 
-      Append(Result, " ");
-   end loop;
+         Append(Result, " ");
+      end loop;
 
-   Append(Result, "--");
+      Append(Result, "--");
 
-   return To_String(Result);
+      return To_String(Result);
 
-end Make_Line;
+   end Make_Line;
 
 end Adx.Lib.Mkheader;

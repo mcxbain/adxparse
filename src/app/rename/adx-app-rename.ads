@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.App.Rename is
 
-pragma Pure;
+   pragma Pure;
 
 end Adx.App.Rename;

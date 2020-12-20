@@ -22,56 +22,56 @@ use Adx.Lib.Vectortype;
 
 package body Adx.Run.Parse is
 
-procedure Main(Dir_Path:String; Dic_Name:String; Format_Option:String) is
+   procedure Main(Dir_Path:String; Dic_Name:String; Format_Option:String) is
 
-   Dictionary_String:String_Vector_Type;
-   Checker:Boolean:=False;
+      Dictionary_String:String_Vector_Type;
+      Checker:Boolean:=False;
 
-begin
+   begin
 
-   if Dic_Name = "adxlib" then
-      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxLib;
-   elsif Dic_Name = "adxparse" then
-      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxParse;
-   end if;
-
-   --check if dir exists;
-   if Adx.Lib.Dircheck.Dircheck(Dir_Path) then
-
-      --to avoid anny danger we just add here allowed directorys
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxlib") then
-         Checker:=True;
+      if Dic_Name = "adxlib" then
+         Dictionary_String:=Adx.App.Format.Dictionary.GetAdxLib;
+      elsif Dic_Name = "adxparse" then
+         Dictionary_String:=Adx.App.Format.Dictionary.GetAdxParse;
       end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxparse") then
-         Checker:=True;
-      end if;
+      --check if dir exists;
+      if Adx.Lib.Dircheck.Dircheck(Dir_Path) then
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/git") then
-         Checker:=True;
-      end if;
+         --to avoid anny danger we just add here allowed directorys
+         if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxlib") then
+            Checker:=True;
+         end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace") then
-         Checker:=True;
-      end if;
+         if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxparse") then
+            Checker:=True;
+         end if;
 
-      if Checker then
+         if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/git") then
+            Checker:=True;
+         end if;
 
-         Adx.App.Rmheader.Make.MakeAll(Dir_Path);
-         Adx.App.AddHeader.Make.MakeAll(Dir_Path);
-         Adx.App.Format.Make.MakeAll(Dir_Path, Dictionary_String);
-         Adx.App.Custom.Make.MakeAll(Dir_Path, Format_Option);
+         if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace") then
+            Checker:=True;
+         end if;
+
+         if Checker then
+
+            Adx.App.Rmheader.Make.MakeAll(Dir_Path);
+            Adx.App.AddHeader.Make.MakeAll(Dir_Path);
+            Adx.App.Format.Make.MakeAll(Dir_Path, Dictionary_String);
+            Adx.App.Custom.Make.MakeAll(Dir_Path, Format_Option);
+
+         else
+            Put_Line("Directory not allowed..");
+         end if;
 
       else
-         Put_Line("Directory not allowed..");
+
+         Put_Line("Directory dosent exist..");
+
       end if;
 
-   else
-
-      Put_Line("Directory dosent exist..");
-
-   end if;
-
-end Main;
+   end Main;
 
 end Adx.Run.Parse;

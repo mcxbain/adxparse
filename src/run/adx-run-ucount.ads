@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Run.Ucount is
 
-procedure Main(Dir_Path:String);
+   procedure Main(Dir_Path:String);
 
 end Adx.Run.Ucount;

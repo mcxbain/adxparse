@@ -9,6 +9,6 @@
 ------------------------------------------------------------------------------
 package Adx.Run.Parse is
 
-procedure Main(Dir_Path:String; Dic_Name:String; Format_Option:String);
+   procedure Main(Dir_Path:String; Dic_Name:String; Format_Option:String);
 
 end Adx.Run.Parse;
