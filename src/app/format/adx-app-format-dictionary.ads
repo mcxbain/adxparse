@@ -16,5 +16,6 @@ procedure InitCurrentDirectory;
 function GetDictionaryFilename return String;
 function GetAdxLib return String_Vector_Type;
 function GetAdxParse return String_Vector_Type;
+function Getadxserver return String_Vector_Type;
 
 end Adx.App.Format.Dictionary;
