@@ -53,6 +53,10 @@ begin
          Checker:=True;
       end if;
 
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/server.*") then
+         Checker:=True;
+      end if;
+
       if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/git") then
          Checker:=True;
       end if;
