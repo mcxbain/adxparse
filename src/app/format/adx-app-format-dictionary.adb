@@ -116,14 +116,14 @@ begin
 
    My_Vector.Append("*CR*");
    My_Vector.Append("*LF*");
-   My_Vector.Append("*MYSQL*");
-   My_Vector.Append("*INSERT*");
-   My_Vector.Append("*UPDATE*");
-   My_Vector.Append("*DELETE*");
-   My_Vector.Append("*CREATE*");
-   My_Vector.Append("*SELECT*");
-   My_Vector.Append("*PRINT_RESULT*");
-   My_Vector.Append("*FREE_RESULT*");
+   My_Vector.Append("MYSQL");
+   My_Vector.Append("DB_INSERT");
+   My_Vector.Append("DB_UPDATE");
+   My_Vector.Append("DB_DELETE");
+   My_Vector.Append("DB_CREATE");
+   My_Vector.Append("DB_SELECT");
+   My_Vector.Append("DB_PRINT_RESULT");
+   My_Vector.Append("DB_FREE_RESULT");
 
    return My_Vector;
 
