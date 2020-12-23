@@ -93,6 +93,7 @@ begin
    My_Vector.Append("*GetDictionaryFilename*");
    My_Vector.Append("*GetAdxLib*");
    My_Vector.Append("*GetAdxParse*");
+   My_Vector.Append("*GetAdxServer*");
 
    -- Remove Header
    My_Vector.Append("*RemoveHeader*");
@@ -107,7 +108,7 @@ begin
 
 end GetAdxParse;
 
-function Getadxserver return String_Vector_Type is
+function GetAdxServer return String_Vector_Type is
 
    My_Vector:String_Vector_Type;
 
@@ -115,9 +116,17 @@ begin
 
    My_Vector.Append("*CR*");
    My_Vector.Append("*LF*");
+   My_Vector.Append("*MYSQL*");
+   My_Vector.Append("*INSERT*");
+   My_Vector.Append("*UPDATE*");
+   My_Vector.Append("*DELETE*");
+   My_Vector.Append("*CREATE*");
+   My_Vector.Append("*SELECT*");
+   My_Vector.Append("*PRINT_RESULT*");
+   My_Vector.Append("*FREE_RESULT*");
 
    return My_Vector;
 
-end Getadxserver;
+end GetAdxServer;
 
 end Adx.App.Format.Dictionary;

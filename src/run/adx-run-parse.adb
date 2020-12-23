@@ -34,7 +34,7 @@ begin
    elsif Dic_Name = "adxparse" then
       Dictionary_String:=Adx.App.Format.Dictionary.GetAdxParse;
    elsif Dic_Name = "adxserver" then
-      Dictionary_String:=Adx.App.Format.Dictionary.Getadxserver;
+      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxServer;
    end if;
 
    --check if dir exists;
