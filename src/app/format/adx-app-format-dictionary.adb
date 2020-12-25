@@ -129,4 +129,44 @@ begin
 
 end GetAdxServer;
 
+function Getadxsqlite return String_Vector_Type is
+
+   My_Vector:String_Vector_Type;
+
+begin
+
+   My_Vector.Append("*CR*");
+   My_Vector.Append("*LF*");
+   My_Vector.Append("MYSQL");
+   My_Vector.Append("DB_INSERT");
+   My_Vector.Append("DB_UPDATE");
+   My_Vector.Append("DB_DELETE");
+   My_Vector.Append("DB_CREATE");
+   My_Vector.Append("DB_SELECT");
+   My_Vector.Append("DB_PRINT_RESULT");
+   My_Vector.Append("DB_FREE_RESULT");
+
+   My_Vector.Append("sql64");
+   My_Vector.Append("sqlite3");
+   My_Vector.Append("sqlite3_access");
+   My_Vector.Append("sqlite3_stmt");
+   My_Vector.Append("sqlite3_stmt_access");
+   My_Vector.Append("sqlite3_libversion");
+   My_Vector.Append("sqlite3_open");
+   My_Vector.Append("sqlite3_exec");
+   My_Vector.Append("sqlite3_prepare_V2");
+   My_Vector.Append("sqlite3_step");
+   My_Vector.Append("sqlite3_column_Text");
+   My_Vector.Append("sqlite3_column_Count");
+   My_Vector.Append("sqlite3_last_insert_rowid");
+   My_Vector.Append("sqlite3_finalize");
+   My_Vector.Append("sqlite3_errmsg");
+   My_Vector.Append("sqlite3_errcode");
+   My_Vector.Append("sqlite3_close");
+   My_Vector.Append("sqlite3");
+
+   return My_Vector;
+
+end Getadxsqlite;
+
 end Adx.App.Format.Dictionary;
