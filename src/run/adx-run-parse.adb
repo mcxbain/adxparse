@@ -41,27 +41,27 @@ begin
    if Adx.Lib.Dircheck.Dircheck(Dir_Path) then
 
       --to avoid anny danger we just add here allowed directorys
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxlib") then
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/adxlib") then
          Checker:=True;
       end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxparse") then
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/adxparse") then
          Checker:=True;
       end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/adxserver") then
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/adxserver") then
          Checker:=True;
       end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/ada/server.*") then
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/adxsqlite") then
          Checker:=True;
       end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/git") then
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/server.*") then
          Checker:=True;
       end if;
 
-      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace") then
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/sqlite.*") then
          Checker:=True;
       end if;
 
