@@ -67,6 +67,10 @@ begin
          Checker:=True;
       end if;
 
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/openssl.*") then
+         Checker:=True;
+      end if;
+
       if Checker then
 
          Adx.App.Rmheader.Make.MakeAll(Dir_Path);
