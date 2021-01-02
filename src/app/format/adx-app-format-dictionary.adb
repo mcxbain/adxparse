@@ -125,6 +125,7 @@ begin
    My_Vector.Append("DB_PRINT_RESULT");
    My_Vector.Append("DB_FREE_RESULT");
    My_Vector.Append("*SSL*");
+   My_Vector.Append("*CTX*");
 
    return My_Vector;
 
