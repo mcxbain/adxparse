@@ -126,6 +126,9 @@ begin
    My_Vector.Append("DB_FREE_RESULT");
    My_Vector.Append("*SSL*");
    My_Vector.Append("*CTX*");
+   My_Vector.Append("SSL_FILETYPE");
+   My_Vector.Append("SSL_FILETYPE_ASN1");
+   My_Vector.Append("SSL_FILETYPE_PEM");
 
    return My_Vector;
 
