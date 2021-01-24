@@ -176,4 +176,17 @@ begin
 
 end Getadxsqlite;
 
+function Getadxgen return String_Vector_Type is
+
+   My_Vector:String_Vector_Type;
+
+begin
+
+   My_Vector.Append("*CR*");
+   My_Vector.Append("*LF*");
+
+   return My_Vector;
+
+end Getadxgen;
+
 end Adx.App.Format.Dictionary;

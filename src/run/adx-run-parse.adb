@@ -37,6 +37,8 @@ begin
       Dictionary_String:=Adx.App.Format.Dictionary.GetAdxServer;
    elsif Dic_Name = "adxsqlite" then
       Dictionary_String:=Adx.App.Format.Dictionary.Getadxsqlite;
+   elsif Dic_Name = "adxgen" then
+      Dictionary_String:=Adx.App.Format.Dictionary.Getadxgen;
    end if;
 
    --check if dir exists;
@@ -59,6 +61,10 @@ begin
          Checker:=True;
       end if;
 
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/adxgen") then
+         Checker:=True;
+      end if;
+
       if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/server.*") then
          Checker:=True;
       end if;
@@ -68,6 +74,10 @@ begin
       end if;
 
       if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/openssl.*") then
+         Checker:=True;
+      end if;
+
+      if Adx.Lib.Regcheck.Regcheck(Dir_Path, "^/home/mcxbain/workspace/gen.*") then
          Checker:=True;
       end if;
 
