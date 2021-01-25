@@ -191,6 +191,7 @@ begin
    My_Vector.Append("NameUCF");
    My_Vector.Append("WriteAds");
    My_Vector.Append("WriteAdb");
+   My_Vector.Append("AGU");
 
    return My_Vector;
 
