@@ -36,9 +36,9 @@ begin
    elsif Dic_Name = "adxserver" then
       Dictionary_String:=Adx.App.Format.Dictionary.GetAdxServer;
    elsif Dic_Name = "adxsqlite" then
-      Dictionary_String:=Adx.App.Format.Dictionary.Getadxsqlite;
+      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxSqlite;
    elsif Dic_Name = "adxgen" then
-      Dictionary_String:=Adx.App.Format.Dictionary.Getadxgen;
+      Dictionary_String:=Adx.App.Format.Dictionary.GetAdxGen;
    end if;
 
    --check if dir exists;

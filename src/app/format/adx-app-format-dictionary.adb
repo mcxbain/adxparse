@@ -138,7 +138,7 @@ begin
 
 end GetAdxServer;
 
-function Getadxsqlite return String_Vector_Type is
+function GetAdxSqlite return String_Vector_Type is
 
    My_Vector:String_Vector_Type;
 
@@ -176,9 +176,9 @@ begin
 
    return My_Vector;
 
-end Getadxsqlite;
+end GetAdxSqlite;
 
-function Getadxgen return String_Vector_Type is
+function GetAdxGen return String_Vector_Type is
 
    My_Vector:String_Vector_Type;
 
@@ -191,6 +191,6 @@ begin
 
    return My_Vector;
 
-end Getadxgen;
+end GetAdxGen;
 
 end Adx.App.Format.Dictionary;
