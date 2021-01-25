@@ -94,6 +94,8 @@ begin
    My_Vector.Append("*GetAdxLib*");
    My_Vector.Append("*GetAdxParse*");
    My_Vector.Append("*GetAdxServer*");
+   My_Vector.Append("*GetAdxSqlite*");
+   My_Vector.Append("*GetAdxGen*");
 
    -- Remove Header
    My_Vector.Append("*RemoveHeader*");
@@ -184,6 +186,8 @@ begin
 
    My_Vector.Append("*CR*");
    My_Vector.Append("*LF*");
+   My_Vector.Append("NameUC");
+   My_Vector.Append("NameUCF");
 
    return My_Vector;
 
