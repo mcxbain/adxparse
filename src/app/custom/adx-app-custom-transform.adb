@@ -93,4 +93,20 @@ begin
 
 end TransformColonEqual;
 
+------------------------------------------------------------------------------
+-- Transform Ampersand
+------------------------------------------------------------------------------
+function Transformampersand(My_String:String) return String is
+
+   Result:Unbounded_String;
+   Before:constant String:=" " & "& ";
+   After:constant String:="&";
+
+begin
+
+   Result:=To_Unbounded_String(Adx.Lib.Replace.Replace(My_String, Before, After));
+   return To_String(Result);
+
+end Transformampersand;
+
 end Adx.App.Custom.Transform;

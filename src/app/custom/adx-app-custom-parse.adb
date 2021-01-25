@@ -81,6 +81,10 @@ begin
          My_String:=To_Unbounded_String(Adx.App.Custom.Transform.TransformLineSpace(To_String(My_String)));
       end if;
 
+      if Format_Option = "ampersand" then
+         My_String:=To_Unbounded_String(Adx.App.Custom.Transform.Transformampersand(To_String(My_String)));
+      end if;
+
       -- My_String:=To_Unbounded_string(Adx.App.Custom.Transform.TransformBrackets(To_String(My_String)));
       My_String:=To_Unbounded_String(Adx.App.Custom.Transform.TransformColon(To_String(My_String)));
       My_String:=To_Unbounded_String(Adx.App.Custom.Transform.TransformColonEqual(To_String(My_String)));

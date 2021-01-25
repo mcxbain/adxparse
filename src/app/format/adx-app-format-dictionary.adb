@@ -87,6 +87,7 @@ begin
    My_Vector.Append("*TransformBrackets*");
    My_Vector.Append("*TransformColon*");
    My_Vector.Append("*TransformColonEqual*");
+   My_Vector.Append("*TransformAmpersand*");
 
    -- dictionary ads
    My_Vector.Append("*InitCurrentDirectory*");
@@ -188,6 +189,8 @@ begin
    My_Vector.Append("*LF*");
    My_Vector.Append("NameUC");
    My_Vector.Append("NameUCF");
+   My_Vector.Append("WriteAds");
+   My_Vector.Append("WriteAdb");
 
    return My_Vector;
 
