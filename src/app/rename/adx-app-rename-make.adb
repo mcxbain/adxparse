@@ -8,10 +8,12 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 with Ada.Text_IO;
+with Ada.Strings.Unbounded;
 with Adx.App.Rename.File;
 with Adx.App.Rename.Parse;
 
 use Ada.Text_IO;
+use Ada.Strings.Unbounded;
 
 package body Adx.App.Rename.Make is
 
@@ -38,10 +40,20 @@ end MakeAll;
 ------------------------------------------------------------------------------
 procedure MakeRename(Dir_Path:String; Old_Name:String; New_Name:String) is
 
+   Has_Adb:Boolean;
+   Result:Unbounded_String;
+   pragma Unreferenced(Result);
+
 begin
 
    Adx.App.Rename.File.Rename(Dir_Path, Old_Name, New_Name, ".ads");
-   Adx.App.Rename.File.Rename(Dir_Path, Old_Name, New_Name, ".adb");
+
+   --check if adb exists
+   Has_Adb:=Adx.App.Rename.File.GetFilePath(Dir_Path, Old_Name & ".adb", Result);
+
+   if Has_Adb then
+      Adx.App.Rename.File.Rename(Dir_Path, Old_Name, New_Name, ".adb");
+   end if;
 
 end MakeRename;
 

@@ -24,7 +24,7 @@ function GetFilePath(Dir_Path:String; File_Name:String; Result:out Unbounded_Str
    My_Vector:Directory_Vector_Type;
    My_Record:Directory_Record_Type;
    Has_Match:Boolean:=False;
-   File_Error:exception;
+   --File_Error:exception;
 
 begin
 
@@ -44,11 +44,12 @@ begin
 
    end loop;
 
-   if not Has_Match then
+   --  if not Has_Match then
 
-      raise File_Error with "File not found";
+   --  raise File_Error with "File not found";
+   --     null;
 
-   end if;
+--   end if;
 
    return Has_Match;
 
